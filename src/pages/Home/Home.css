@@ -1,0 +1,224 @@
+/* HERO */
+
+.badge-brand {
+    background-color: #eff6ff;
+    color: var(--brand-primary);
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    font-size: .875rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+
+.hero-title {
+    font-weight: 800;
+    color: var(--brand-primary);
+    line-height: 1.2;
+    font-size: 2.75rem;
+}
+
+
+.hero-text {
+    font-size: 1.25rem;
+}
+
+
+.stat-number {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+}
+
+
+.stat-label {
+    font-size: .875rem;
+    line-height: 1.3;
+}
+
+
+.border-divider {
+    border-left: 2px solid var(--border-color);
+}
+
+
+/* HERRAMIENTAS */
+
+
+.section-title {
+    color: var(--brand-primary);
+    font-weight: 700;
+}
+
+
+.custom-card {
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, .05);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.custom-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, .08);
+
+}
+
+
+.card-title {
+    color: var(--brand-primary);
+}
+
+
+/* SOBRE NOSOTROS */
+
+
+.underline-title {
+
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+
+}
+
+
+.underline-title::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 120px;
+    height: 3px;
+
+    background: white;
+
+}
+
+
+.info-card {
+
+    border-radius: 12px;
+
+    background-color:
+        rgba(255, 255, 255, .189) !important;
+
+}
+
+
+/* FLUJO */
+
+
+.section-flujo {
+    background-color: var(--light-section-bg);
+}
+
+
+.step-number {
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: #e2e8f0;
+
+    color: #64748b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    font-size: 1.25rem;
+
+}
+
+
+.step-number.active {
+
+    background: var(--brand-primary);
+
+    color: white;
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:767.98px) {
+
+
+    .hero-title {
+
+        font-size: 1.85rem !important;
+        text-align: center;
+
+    }
+
+
+    .hero-text {
+
+        text-align: center;
+        font-size: 1rem !important;
+
+    }
+
+
+    .border-divider {
+
+        border-left: none !important;
+        padding-left: 0 !important;
+
+    }
+
+
+    .stat-number {
+
+        font-size: 1.75rem;
+
+    }
+
+
+    .custom-card {
+
+        margin-bottom: .5rem;
+
+    }
+
+
+    .hero-title br {
+
+        display: none;
+
+    }
+
+
+    main section {
+
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+
+    }
+
+}

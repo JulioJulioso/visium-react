@@ -1,0 +1,64 @@
+.footer-custom {
+
+    font-family: "Inter", sans-serif;
+
+}
+
+
+.footer-custom h4,
+.footer-custom h5 {
+
+    color: var(--brand-primary);
+
+    font-size: 1.05rem;
+
+}
+
+
+
+.social-icon-btn {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #475569;
+
+    font-size: 1.2rem;
+
+    text-decoration: none;
+
+    background: white;
+
+    transition: .3s;
+
+}
+
+
+.social-icon-btn:hover {
+
+    background: #f1f5f9;
+
+    color: var(--brand-primary);
+
+}
+
+
+.footer-links a,
+.bottom-links a {
+
+    transition: color .2s ease;
+
+}
+
+
+.footer-links a:hover,
+.bottom-links a:hover {
+
+    color: var(--brand-primary) !important;
+
+}

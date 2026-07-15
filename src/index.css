@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --brand-primary: #003fa0;
+  --brand-primary-hover: #002d72;
+  --brand-blue-bg: #0040a1;
+
+  --text-dark: #1e293b;
+  --text-light: #f1f5f9;
+
+  --light-section-bg: #f8fafc;
+  --border-color: #e2e8f0;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+.text-brand-primary {
+  color: var(--brand-primary);
+}
+
+
+.bg-brand-blue {
+  background-color: var(--brand-blue-bg);
+}
+
+
+.bg-light-section {
+  background-color: var(--light-section-bg);
+}
+
+
+.btn-brand-primary {
+  background-color: var(--brand-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  transition: background-color .2s ease;
+}
+
+
+.btn-brand-primary:hover {
+  background-color: var(--brand-primary-hover);
+  color: white;
+}
+
+
+.btn-outline-brand {
+  border: 1px solid var(--brand-primary);
+  color: var(--brand-primary);
+  background: transparent;
+  border-radius: 8px;
+  padding: .6rem 1.2rem;
+}
+
+
+.btn-outline-brand:hover {
+  background-color: var(--border-color);
+  color: white;
+}
+
+
+.btn-brand-outline {
+  border: 1px solid var(--brand-primary);
+  color: var(--brand-primary);
+  background: white;
+}
+
+
+.btn-brand-outline:hover {
+  background-color: #f1f5f9;
+}
+
+
+.text-nowrap {
+  white-space: nowrap !important;
+}

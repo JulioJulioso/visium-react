@@ -1,0 +1,704 @@
+:root {
+    --visium-blue-dark: #0d2c66;
+    --visium-blue: #13357a;
+    --visium-blue-deep: #0a2050;
+    --visium-blue-btn: #1d3f8c;
+    --visium-text-muted: #6b7280;
+}
+
+
+/* CONTENEDOR PRINCIPAL LOGIN */
+
+.login-page {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 12% 10%,
+            rgba(29, 63, 140, 0.16),
+            transparent 30%),
+        linear-gradient(135deg,
+            #f7f9fd 0%,
+            #e8eef8 100%);
+
+    font-family:
+        "Segoe UI",
+        system-ui,
+        -apple-system,
+        Arial,
+        sans-serif;
+
+}
+
+
+
+/* TARJETA LOGIN */
+
+.auth-card {
+
+    width: 100%;
+
+    max-width: 1040px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid rgba(13, 44, 102, 0.08);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 24px 70px rgba(13, 44, 102, 0.18);
+
+}
+
+
+
+/* PANEL IZQUIERDO */
+
+.panel-left {
+
+    min-height: 620px;
+
+    padding: 44px 40px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        linear-gradient(160deg,
+            var(--visium-blue-dark) 0%,
+            var(--visium-blue-deep) 100%);
+
+}
+
+
+
+.panel-left::before {
+
+    content: "";
+
+    position: absolute;
+
+    right: -70px;
+
+    bottom: -70px;
+
+    width: 360px;
+
+    height: 360px;
+
+    background:
+        radial-gradient(circle at 30% 30%,
+            rgba(255, 255, 255, 0.14),
+            transparent 70%);
+
+    pointer-events: none;
+
+}
+
+
+
+.brand-title {
+
+    margin-bottom: 6px;
+
+    font-size: 1.9rem;
+
+    font-weight: 700;
+
+}
+
+
+
+.brand-subtitle {
+
+    margin-bottom: 40px;
+
+    color: #c3d0ec;
+
+    font-size: 1.02rem;
+
+}
+
+
+
+/* CARACTERISTICAS */
+
+.feature-row {
+
+    display: flex;
+
+    gap: 16px;
+
+    margin-bottom: 26px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+
+.feature-icon {
+
+    width: 46px;
+
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #2f5fc9;
+
+    border-radius: 12px;
+
+    font-size: 1.2rem;
+
+}
+
+
+
+.feature-title {
+
+    margin-bottom: 4px;
+
+    font-size: 1.04rem;
+
+    font-weight: 700;
+
+}
+
+
+
+.feature-text {
+
+    margin: 0;
+
+    color: #c3d0ec;
+
+    font-size: 0.9rem;
+
+    line-height: 1.45;
+
+}
+
+
+
+.panel-left .footer-note {
+
+    margin-top: auto;
+
+    padding-top: 18px;
+
+    position: relative;
+
+    z-index: 2;
+
+    border-top:
+
+        1px solid rgba(255, 255, 255, 0.15);
+
+    color: #a9bbe0;
+
+    font-size: 0.85rem;
+
+}
+
+
+
+/* PANEL DERECHO */
+
+.panel-right {
+
+    min-height: 620px;
+
+    padding: 48px 64px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+
+.logo-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+}
+
+
+
+.logo-row i {
+
+    color: var(--visium-blue);
+
+    font-size: 1.7rem;
+
+}
+
+
+
+.logo-row span {
+
+    color: #13284f;
+
+    font-size: 1.4rem;
+
+    font-weight: 700;
+
+}
+
+
+
+.form-heading {
+
+    margin-bottom: 8px;
+
+    color: #13284f;
+
+    font-size: 1.9rem;
+
+    font-weight: 700;
+
+}
+
+
+
+.form-subheading {
+
+    margin-bottom: 30px;
+
+    color: var(--visium-text-muted);
+
+}
+
+
+
+/* FORMULARIO */
+
+.form-label-custom {
+
+    color: #374151;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.input-group-custom {
+
+    overflow: hidden;
+
+    border: 1px solid #dfe5ee;
+
+    border-radius: 12px;
+
+    background: #f6f8fb;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+
+.input-group-custom:focus-within {
+
+    border-color: var(--visium-blue);
+
+    box-shadow:
+        0 0 0 4px rgba(29, 63, 140, 0.1);
+
+}
+
+
+
+.input-group-custom .input-group-text,
+.input-group-custom .form-control {
+
+    border: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+}
+
+
+
+.input-group-custom .input-group-text {
+
+    color: #8b96a8;
+
+}
+
+
+
+.input-group-custom .form-control:focus {
+
+    background: white;
+
+    box-shadow: none;
+
+}
+
+
+
+/* BOTON LOGIN */
+
+.btn-login {
+
+    padding: 12px 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--visium-blue-btn);
+
+    font-size: 1.02rem;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 12px 22px rgba(29, 63, 140, 0.22);
+
+}
+
+
+
+.btn-login:hover {
+
+    background: #15316f;
+
+}
+
+
+
+/* MOSTRAR PASSWORD */
+
+.toggle-eye {
+
+    position: absolute;
+
+    right: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: none;
+
+    color: #9ca3af;
+
+    cursor: pointer;
+
+}
+
+
+
+.form-check-label {
+
+    color: #374151;
+
+    font-size: 0.92rem;
+
+}
+
+
+
+/* FOOTER LOGIN */
+
+.bottom-row {
+
+    margin-top: 26px;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid #e5e7eb;
+
+    color: #4b5563;
+
+    font-size: 0.9rem;
+
+}
+
+
+
+.bottom-row a {
+
+    color: var(--visium-blue);
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+}
+
+
+
+.bottom-row a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 991.98px) {
+
+
+    .login-page {
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .auth-card {
+
+        max-width: 720px;
+
+    }
+
+
+
+    .panel-left {
+
+        min-height: auto;
+
+        padding: 30px 34px;
+
+    }
+
+
+
+    .feature-row,
+    .panel-left .footer-note {
+
+        display: none;
+
+    }
+
+
+
+    .brand-subtitle {
+
+        margin-bottom: 0;
+
+    }
+
+
+
+    .panel-right {
+
+        min-height: auto;
+
+        padding: 42px 44px;
+
+    }
+
+
+}
+
+
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 991.98px) {
+
+
+    .login-page {
+
+        padding: 16px;
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .auth-card {
+
+        max-width: 720px;
+
+        width: 100%;
+
+    }
+
+
+
+    .panel-left {
+
+        min-height: auto;
+
+        padding: 30px 34px;
+
+    }
+
+
+
+    .feature-row,
+    .panel-left .footer-note {
+
+        display: none;
+
+    }
+
+
+
+    .brand-subtitle {
+
+        margin-bottom: 0;
+
+    }
+
+
+
+    .panel-right {
+
+        min-height: auto;
+
+        padding: 42px 44px;
+
+    }
+
+
+}
+
+
+
+/* RESPONSIVE MOVIL */
+
+@media (max-width: 767.98px) {
+
+
+    .login-page {
+
+        padding: 12px;
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .auth-card {
+
+        width: 100%;
+
+        border-radius: 18px;
+
+    }
+
+
+
+    .panel-right {
+
+        padding: 30px 20px;
+
+    }
+
+
+
+    .logo-row {
+
+        margin-bottom: 20px;
+
+    }
+
+
+
+    .form-heading {
+
+        font-size: 1.45rem;
+
+        line-height: 1.25;
+
+    }
+
+
+
+    .form-subheading {
+
+        font-size: .95rem;
+
+        margin-bottom: 24px;
+
+    }
+
+
+
+    .bottom-row {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .btn-login {
+
+        padding: 12px;
+
+    }
+
+
+
+}

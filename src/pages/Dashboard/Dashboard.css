@@ -1,0 +1,383 @@
+.main-content {
+  padding: 12px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+ 
+.Saludo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 100%;
+  padding-left: 10px;
+  margin-left: 0;
+}
+ 
+.SaludoDoctor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 10px;
+}
+.Saludo h1 {
+  font-size: 36px;
+  margin-bottom: 4px;
+  color: #003d9b;
+  font-family: 'Inter', sans-serif;
+  margin-top: 0;
+}
+.Saludo p {
+  color: #434654;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  margin-top: 0;
+}
+ 
+.Saludo p strong {
+  color: #003d9b;
+  font-family: 'Inter', sans-serif;
+  margin-top: 0;
+}
+ 
+/* Tarjeta Paciente */
+.grid-row-2 {
+ display: grid;
+ grid-template-columns: 1fr 1.5fr;
+ gap: 24px;
+}
+ 
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ font-family: 'Inter', sans-serif;
+}
+ 
+/*Tarjeta Contenedora */
+.card-paciente {
+  width: 380px;
+  height: min-content;
+  background-color: #ffffff;
+  border: 11px solid var(--gray-300);
+  border-radius: 12px; /* Esquinas redondeadas suaves */
+  border-width: 1px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+ 
+/*Encabezado (Foto + Nombre + Etiquetas) */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  margin-bottom: 16px;
+}
+ 
+/* Contenedor del Avatar con el marco azul de Figma */
+.avatar-contenedor {
+  width: 82px;
+  height: 82px;
+  border: 2px solid #0056b3; /* Borde azul vibrante */
+  border-radius: 16px; /* Esquinas redondeadas del marco */
+  padding: 3px; /* Separación interna entre foto y borde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.avatar-foto {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px; /* Sutilmente menor al contenedor para encajar bien */
+  object-fit: cover;
+}
+ 
+.info-detalles {
+  flex-grow: 1;
+  margin-top: 4px;
+}
+ 
+.paciente-nombre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  width: min-content;
+}
+ 
+.consulta-tipo {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.3;
+}
+ 
+.consulta-subtext {
+  color: #64748b;
+}
+ 
+/* Etiquetas Flotantes a la Derecha */
+ 
+.etiquetas-grupo {
+  position: absolute;
+  top: -12px;
+  right: -24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  margin-left: 0;
+}
+ 
+/* Base general de las etiquetas */
+.badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+}
+ 
+/* Próxima Cita (Estilo Rectángulo Superior con borde redondeado inferior izquierdo) */
+.badge-proxima {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  margin-left: 0;
+  margin-top: -12px;
+  border-radius: 0 12px 0 12px; /* Sigue la curva de la esquina de la tarjeta */
+}
+ 
+/* Paciente Nuevo (Estilo Píldora Celeste) */
+.badge-nuevo {
+  background-color: #bfeeff;
+  color: #0369a1;
+  border-radius: 4px;
+  margin-left: 0;
+  width: min-content;
+   
+}
+ 
+/* Hora y Consultorio */
+.card-meta {
+  display: flex;
+  gap: 20px;
+  margin-left: 98px; /* Alineado exactamente con el texto de arriba */
+  margin-bottom: 24px;
+}
+ 
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+ 
+.horario {
+  color: #0056b3; /* Azul destacado para el tiempo */
+  font-weight: 700;
+}
+ 
+.ubicacion {
+  color: #64748b;
+}
+ 
+.icono {
+  stroke-width: 2.5px;
+}
+ 
+/* Acciones de Botones */
+.card-acciones {
+  display: flex;
+  gap: 12px;
+}
+ 
+/* Botón Azul "Iniciar Examen" */
+.btn-iniciar {
+  flex-grow: 1;
+  background-color: #004099; /* Azul rey oscuro idéntico */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+ 
+/* Efectos funcionales */
+.btn-iniciar:hover {
+  background-color: #00337a; /* Se oscurece al pasar el cursor */
+}
+ 
+.btn-iniciar:active {
+  transform: scale(0.98); /* Pequeña pulsación física al hacer clic */
+}
+ 
+.icono-btn {
+  fill: none;
+}
+ 
+/* Botón de Tres Puntos (Opciones) */
+.btn-opciones {
+  background-color: #f8fafc;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 52px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+ 
+.btn-opciones:hover {
+  background-color: #f1f5f9;
+}
+ 
+ 
+/* 🏷️ ESTILO: Contenedor Principal de la Agenda */
+.agenda-container {
+  width: 100%;
+  margin-left: -170px;
+  min-width: 600px;
+  max-width: 750px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  justify-self: start;
+}
+ 
+/* Alineación del Título y el enlace */
+.agenda-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+ 
+.agenda-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+ 
+.link-calendario {
+  font-size: 0.85rem;
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 600;
+}
+ 
+.link-calendario:hover {
+  text-decoration: underline;
+}
+ 
+/* Tabla Reutilizable */
+.tabla-agenda {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+ 
+/* Encabezados de Columnas */
+.tabla-agenda th {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  width: min-content;
+}
+ 
+/* Celdas de Datos */
+.tabla-agenda td {
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+ 
+/* Quitar el borde inferior a la última fila */
+.tabla-agenda tr:last-child td {
+  border-bottom: none;
+}
+ 
+/* Estilos de Columnas Específicas */
+.col-hora {
+  color: #0056b3;
+  font-weight: 700;
+  width: 15%;
+}
+ 
+.col-paciente {
+  font-weight: 600;
+  color: #1e293b;
+  width: 25%;
+}
+ 
+.col-motivo {
+  color: #475569;
+  width: 40%;
+}
+ 
+/* Píldoras de Estado */
+.badge-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+ 
+/* Paleta de colores exacta de los estados */
+.status-completado {
+  background-color: #e2fbe8;
+  color: #15803d;
+}
+ 
+.status-siguiente {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+ 
+.status-espera {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+ 
+.status-programado {
+  background-color: #f8fafc;
+  color: #94a3b8;
+  border: 1px solid #e2e8f0;
+  padding: 5px 11px; /* Compensa el tamaño por el borde físico */
+}
+ 
+/* Estado dinámico extra para cuando la consulta empiece */
+.status-en-curso {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+ 
+/* tiene menú contextual
+
+
+tienes menú contextual */

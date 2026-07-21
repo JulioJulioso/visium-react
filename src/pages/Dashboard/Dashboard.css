@@ -43,9 +43,12 @@
  
 /* Tarjeta Paciente */
 .grid-row-2 {
- display: grid;
- grid-template-columns: 1fr 1.5fr;
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
  gap: 24px;
+ width: 100%;
 }
  
 * {
@@ -57,8 +60,17 @@
  
 /*Tarjeta Contenedora */
 .card-paciente {
-  width: 380px;
-  height: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+
+  height: fit-content;
   background-color: #ffffff;
   border: 11px solid var(--gray-300);
   border-radius: 12px; /* Esquinas redondeadas suaves */
@@ -139,15 +151,6 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   padding: 6px 12px;
-}
- 
-/* Próxima Cita (Estilo Rectángulo Superior con borde redondeado inferior izquierdo) */
-.badge-proxima {
-  background-color: #dbeafe;
-  color: #1d4ed8;
-  margin-left: 0;
-  margin-top: -12px;
-  border-radius: 0 12px 0 12px; /* Sigue la curva de la esquina de la tarjeta */
 }
  
 /* Paciente Nuevo (Estilo Píldora Celeste) */

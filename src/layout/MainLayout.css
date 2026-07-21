@@ -1,0 +1,22 @@
+/* 1. Contenedor Raíz: Alinea el sidebar a la izquierda y el contenido a la derecha */
+.layout-container {
+  display: flex;
+  flex-direction: row; /* Coloca los hijos lado a lado */
+  min-height: 100vh;   /* Ocupa como mínimo todo el alto de la ventana */
+  width: 100%;
+}
+
+/* 2. Envoltorio del contenido (Toda la zona derecha) */
+.content-wrapper {
+  flex: 1;             /* Toma todo el ancho sobrante de la pantalla */
+  display: flex;
+  flex-direction: column; /* Apila el main (<Outlet/>) y el Footer verticalmente */
+  min-width: 0;        /* Evita desbordamientos horizontales por elementos grandes */
+}
+
+/* 3. Área donde se renderiza cada vista (<Outlet />) */
+.main-content {
+  flex: 1;             /* Empuja al Footer al final de la página si hay poco contenido */
+  padding: 24px;       /* Relleno interno para la vista */
+  box-sizing: border-box;
+}

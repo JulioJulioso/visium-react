@@ -1,20 +1,24 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Menulateral from "../components/layout/MenuLateral";
-import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
-import Footer from "../components/Footer/Footer";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import MainLayout from "../layout/MainLayout";
+import HomeLayout from "../layout/HomeLayout";
+import Home from "../pages/Home/Home";
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
+        <Route element={<HomeLayout/>}>
+          <Route path="/home" element={<Home />} />
+        </Route>
+
+        <Route element={<MainLayout/>}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        
+        </Route>
+                
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/footer" element={<Footer/>} />
-        <Route path="/menuLateral" element={<Menulateral />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

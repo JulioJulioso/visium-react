@@ -1,8 +1,8 @@
-* Estilossidebar Generales y Paleta de Colores */
+
 /* MenuLateral.css */
 .sidebar {
     width: 260px;
-    height: 100vh;
+    height: 100vh; /* CAMBIO CLAVE: Usa 100vh en lugar de max-content */
     padding: 15px;
     position: sticky;
     top: 0;
@@ -14,6 +14,7 @@
     background: #ffffff;
     border-right: 1px solid #e5e7eb;
     z-index: 100;
+    box-sizing: border-box;
 }
 
 .sidebar .logo {

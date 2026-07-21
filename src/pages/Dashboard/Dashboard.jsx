@@ -1,6 +1,6 @@
 import "./Dashboard.css"
 
-const Dashboard = () => {
+export default function Dashboard(){
   return (
     <main className="main-content">
       <section className="Saludo">
@@ -27,7 +27,6 @@ const Dashboard = () => {
               </p>
             </div>
             <div className="etiquetas-grupo">
-              <span className="badge badge-proxima">PRÓXIMA CITA</span>
               <span className="badge badge-nuevo">PACIENTE NUEVO</span>
             </div>
           </div>
@@ -142,5 +141,3 @@ const Dashboard = () => {
     </main>
   );
 };
-
-export default Dashboard;

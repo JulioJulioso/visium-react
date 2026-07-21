@@ -11,7 +11,7 @@
     justify-content: flex-start;
     flex-shrink: 0;
     overflow-y: auto;
-    background: #ffffff;
+    background: #ffffff !important;
     border-right: 1px solid #e5e7eb;
     z-index: 100;
     box-sizing: border-box;
@@ -171,6 +171,8 @@
         padding-bottom: 4px;
     }
 
+    
+
     /* Clase activa para cuando manejes el clic del botón en React */
     .sidebar.is-open .menu {
         display: flex;
@@ -190,12 +192,14 @@
         white-space: nowrap;
     }
 
+    
     .sidebar .menu a:hover {
         transform: none;
     }
 
     .sidebar .menu a.active::before {
         display: none;
+     
     }
 }
 

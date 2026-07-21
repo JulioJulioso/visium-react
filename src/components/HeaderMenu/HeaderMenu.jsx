@@ -1,51 +1,39 @@
 import "./HeaderMenu.css";
 
 export default function HeaderMenu (){
-    return(
-        <header classNameName="topbar">
-          <button className="back-button" type="button">
-            <img src="assets/img/arrow.svg" alt="Flecha" aria-hidden="true" />
-            <span>Citas</span>
-          </button>
+  return(
+    <header class="topbar">
+      <div className="topbar-left">
+        <button className="back-btn">
+          <i className="bi bi-arrow-left"></i>
+        </button>
+      </div>
 
-          <form className="search-box" role="search">
-            <img src="assets/img/search.svg" alt="buscar" aria-hidden="true" />
-            <input
-              type="search"
-              name="buscar"
-              placeholder="Buscar paciente o rut..."
-            />
-          </form>
+      <div className="topbar-center">
+        <div className="search-box">
+          <i className="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchPatient" placeholder="Buscar paciente o ID..." />
+        </div>
+      </div>
 
-          <div className="topbar-actions">
-            <button className="btn btn-primary btn-sm" type="button">
-              <img
-                src="assets/img/nuevo-paciente.svg"
-                alt="nuevo paciente"
-                aria-hidden="true"
-              />
-              <span>Nuevo Paciente</span>
-            </button>
+      <div className="topbar-right">
+        <button className="btn-primary">
+          <i className="bi bi-person-fill-add"></i>
 
-            <span className="separator" aria-hidden="true"></span>
+          Nuevo Paciente
 
-            <button
-              className="icon-button"
-              type="button"
-              aria-label="Notificaciones"
-            >
-              <img
-                src="assets/img/campanita.svg"
-                alt="notificaciones"
-                aria-hidden="true"
-              />
-            </button>
+        </button>
+        <button className="icon-btn">
+          <i className="bi bi-bell"></i>
+        </button>
 
-            <div className="profile">
-              <img src="assets/img/doctor.svg" alt="Foto del doctor" />
-              <span>Dr. Smith</span>
-            </div>
-          </div>
-        </header>
-    )
+        <div className="profile">
+          <img src="https://i.pravatar.cc/100?img=12" alt="Doctor" />
+            <span>Perfil</span>
+        </div>
+
+      </div>
+
+    </header>
+  )
 }

@@ -15,11 +15,26 @@ export default function MenuLateral (){
                 <i className="fa-solid fa-bars"></i>
             </button>
             <nav className="menu">
-                 <Link className="nav-link active" aria-current="page" to="/">Panel de control</Link> 
-                <Link className="nav-link active" aria-current="page" to="/">Pacientes</Link>
-                <Link className="nav-link active" aria-current="page" to="/">Citas</Link>
-                <Link className="nav-link active" aria-current="page" to="/">Metrica</Link>
-                <Link className="nav-link active" aria-current="page" to="/">Ficha</Link>
+                <Link className="nav-link active" aria-current="page" to="/">
+                    <i class="bi bi-grid fw-bold"></i>
+                    Panel de control
+                </Link> 
+                <Link className="nav-link " aria-current="page" to="/">
+                    <i class="bi bi-people-fill"></i>
+                    Pacientes
+                </Link>
+                <Link className="nav-link " aria-current="page" to="/">
+                    <i class="bi bi-calendar-event"></i>
+                    Citas
+                </Link>
+                <Link className="nav-link " aria-current="page" to="/">
+                    <i class="bi bi-graph-up"></i>
+                    Metrica
+                </Link>
+                <Link className="nav-link " aria-current="page" to="/">
+                    <i class="bi bi-file-earmark-text"></i>
+                    Ficha
+                </Link>
             </nav>
             <div className="sidebar-bottom">
                 <Link className="nav-link active" aria-current="page" to="/">Cerrar Sesion</Link>

@@ -14,74 +14,52 @@ export default function Dashboard(){
 
       <div className="grid-row-2">
         <div className="card-paciente">
-          <div className="card-header">
-            <div className="avatar-contenedor">
-              <img src="./assets/img/retrato.svg" alt="Maria González" className="avatar-foto" />
-            </div>
-            <div className="info-detalles">
-              <h2 className="paciente-nombre">Maria González</h2>
-              <p className="consulta-tipo">
-                Consulta postoperatoria
-                <br />
-                <span className="consulta-subtext">(Catarata)</span>
-              </p>
-            </div>
-            <div className="etiquetas-grupo">
-              <span className="badge badge-nuevo">PACIENTE NUEVO</span>
-            </div>
-          </div>
+          
+          <div className="card-izquierda">
+            <div className="paciente-header">
+                          
+              <div className="avatar-wrapper">
+                <i className="bi bi-person-fill avatar-icono fs-1"></i>
+              </div>
 
-          <div className="card-meta">
-            <div className="meta-item horario">
-              <svg
-                className="icono"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              <span>10:30 AM</span>
-            </div>
-            <div className="meta-item ubicacion">
-              <svg
-                className="icono"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span>Consultorio 2</span>
-            </div>
-          </div>
+              <div className="paciente-info">
+                <div className="nombre-badge-row">
+                  <h2 className="paciente-nombre">Maria<br />González</h2>
+                </div>
 
-          <div className="card-acciones">
-            <button className="btn-iniciar" id="btnIniciarExamen" type="button">
-              <svg
-                className="icono-btn"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polygon points="10 8 16 12 10 16 10 8" />
-              </svg>
-              Iniciar Examen
+                <p className="consulta-tipo">Consulta postoperatoria</p>
+                <p className="consulta-subtext">(Catarata)</p>
+
+                <div className="horario-meta">
+                  <i className="bi bi-clock"></i>
+                  <span>10:30 AM</span>
+                </div>
+              </div>
+              <div className="btn-nuevopaciente">
+              <span className="badge-nuevo">PACIENTE<br />NUEVO</span>
+              </div>
+            </div>
+
+
+            <button className="btn-iniciar" type="button">
+              <i className="bi bi-play-circle"></i>
+              Iniciar Atención
             </button>
-            <button className="btn-opciones" aria-label="Más opciones" type="button">
-              •••
+          </div>
+
+
+          <div className="separador-vertical"></div>
+
+
+          <div className="card-derecha">
+            <button className="btn-estado" type="button">
+              <i className="bi bi-info-circle-fill"></i>
+              Estado del perfil
+            </button>
+
+            <button className="btn-editar" type="button">
+              <i className="bi bi-person-fill-gear fs-5"></i>
+              Editar Perfil
             </button>
           </div>
         </div>

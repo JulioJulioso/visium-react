@@ -1,0 +1,537 @@
+/* =========================================
+   VARIABLES Y RESET GLOBALES
+========================================= */
+* { 
+    box-sizing: border-box; 
+}
+
+body { 
+    margin: 0; 
+    padding: 0; 
+    background: #f4f7fb; 
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+    color: #374151; 
+}
+
+/* =========================================
+   LAYOUT PRINCIPAL (Sidebar y Contenido)
+========================================= */
+.layout-unificado { 
+    display: flex; 
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+.sidebar { 
+    width: 260px; 
+    background: #fff; 
+    border-right: 1px solid #dce4ef; 
+    display: flex; 
+    flex-direction: column; 
+    flex-shrink: 0; 
+}
+
+.sidebar .logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    padding: 24px; 
+}
+
+.sidebar .logo-icon { 
+    font-size: 24px; 
+    color: #1d4ed8; 
+}
+
+.sidebar .logo h2 { 
+    margin: 0; 
+    font-size: 20px; 
+    font-weight: 700; 
+    color: #1d3557; 
+}
+
+.sidebar .logo span { 
+    font-size: 12px; 
+    color: #6b7280; 
+}
+
+.sidebar .menu { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 10px; 
+}
+
+.sidebar .menu a, 
+.sidebar-bottom a { 
+    display: flex; 
+    align-items: center; 
+    gap: 14px; 
+    padding: 14px 24px; 
+    color: #4b5563; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 15px; 
+}
+
+.sidebar .menu a:hover, 
+.sidebar-bottom a:hover { 
+    background: #f9fafb; 
+    color: #1d4ed8; 
+}
+
+.sidebar .menu a.active { 
+    background: #eff6ff; 
+    color: #1d4ed8; 
+    border-right: 3px solid #1d4ed8; 
+    font-weight: 600; 
+}
+
+.sidebar-bottom { 
+    border-top: 1px solid #dce4ef; 
+    padding: 10px 0; 
+}
+
+.contenido-unificado { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    overflow-y: auto; 
+}
+
+/* =========================================
+   TOPBAR Y BREADCRUMB
+========================================= */
+.topbar { 
+    background: #fff; 
+    border-bottom: 1px solid #dce4ef; 
+    padding: 16px 32px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.topbar-left { 
+    display: flex; 
+    align-items: center; 
+    gap: 40px; 
+}
+
+.back-title { 
+    font-size: 20px; 
+    font-weight: 600; 
+    color: #1d4ed8; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    text-decoration: none; 
+}
+
+.search-box { 
+    background: #f3f4f6; 
+    border-radius: 6px; 
+    padding: 8px 16px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    width: 300px; 
+    border: 1px solid #dce4ef; 
+}
+
+.search-box input { 
+    border: none; 
+    background: transparent; 
+    outline: none; 
+    width: 100%; 
+    font-size: 14px; 
+}
+
+.topbar-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.breadcrumb-bar { 
+    padding: 12px 32px; 
+    font-size: 13px; 
+    color: #6b7280; 
+    background: #f4f7fb; 
+}
+
+.breadcrumb-bar span { 
+    font-weight: 600; 
+    color: #1d4ed8; 
+}
+
+.receta-page { 
+    padding: 0 32px 32px 32px; 
+}
+
+/* =========================================
+   TARJETA PACIENTE
+========================================= */
+.paciente-card { 
+    background: #fff; 
+    border: 1px solid #dce4ef; 
+    border-radius: 12px; 
+    padding: 25px; 
+    display: grid; 
+    grid-template-columns: 2fr 1.5fr 1fr auto; 
+    gap: 20px; 
+    align-items: center; 
+    box-shadow: 0 2px 4px rgba(0,0,0,.02); 
+}
+
+.paciente-info { 
+    display: flex; 
+    align-items: center; 
+    gap: 18px; 
+}
+
+.foto-paciente i { 
+    font-size: 30px;
+}
+
+.datos-paciente h2 { 
+    margin: 0; 
+    color: #111827; 
+    font-size: 20px; 
+    font-weight: 700; 
+}
+
+.datos-paciente p { 
+    margin-top: 4px; 
+    margin-bottom: 0; 
+    color: #6b7280; 
+    font-size: 14px; 
+}
+
+.diagnostico, 
+.ultima-visita { 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.diagnostico span, 
+.ultima-visita span { 
+    color: #6b7280; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+    margin-bottom: 4px; 
+    font-weight: 700; 
+    letter-spacing: 0.5px; 
+}
+
+.diagnostico h4 { 
+    margin: 0; 
+    color: #1d4ed8; 
+    font-size: 15px; 
+    font-weight: 600; 
+}
+
+.ultima-visita h4 { 
+    margin: 0; 
+    color: #374151; 
+    font-size: 15px; 
+    font-weight: 500; 
+}
+
+.historial { 
+    display: flex; 
+    justify-content: flex-end; 
+}
+
+.historial button { 
+    background: #f9fafb; 
+    border: 1px solid #dce4ef; 
+    border-radius: 6px; 
+    padding: 10px 16px; 
+    cursor: pointer; 
+    color: #4b5563; 
+    font-weight: 600; 
+    transition: .3s; 
+    font-size: 14px; 
+}
+
+.historial button:hover { 
+    background: #e5e7eb; 
+}
+
+/* =========================================
+   GRID RECETA (Refracción y Farmacológica)
+========================================= */
+.contenido-receta { 
+    display: grid; 
+    grid-template-columns: minmax(0, 3fr) 320px; 
+    gap: 24px; 
+    margin-top: 24px; 
+    align-items: start; 
+}
+
+/* Columna Izquierda (Óptica) */
+.receta-card { 
+    background: #fff; 
+    border: 1px solid #dce4ef; 
+    border-radius: 12px; 
+    padding: 24px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,.02); 
+    margin-bottom: 24px; 
+}
+
+.titulo-receta { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 24px; 
+}
+
+.titulo-receta h2 { 
+    margin: 0; 
+    color: #111827; 
+    font-size: 18px; 
+    font-weight: 700; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.botones-receta { 
+    display: flex; 
+    background: #f3f4f6; 
+    border-radius: 6px; 
+    padding: 4px; 
+}
+
+.botones-receta button { 
+    padding: 6px 16px; 
+    border: none; 
+    border-radius: 4px; 
+    background: transparent; 
+    cursor: pointer; 
+    font-weight: 600; 
+    font-size: 13px; 
+    color: #6b7280; 
+}
+
+.botones-receta .activo { 
+    background: #1d4ed8; 
+    color: white; 
+}
+
+/* Tabla Refracción */
+.tabla-receta { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-bottom: 24px; 
+    text-align: left; 
+}
+
+.tabla-receta th { 
+    color: #6b7280; 
+    padding: 12px 10px; 
+    font-size: 11px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    border-bottom: 1px solid #dce4ef; 
+}
+
+.tabla-receta td { 
+    padding: 16px 10px; 
+    border-bottom: 1px solid #f3f4f6; 
+    vertical-align: middle; 
+}
+
+.tabla-receta td:first-child { 
+    font-weight: 600; 
+    color: #1d4ed8; 
+}
+
+.tabla-receta input { 
+    width: 60px; 
+    padding: 10px; 
+    border: 1px solid #dce4ef; 
+    border-radius: 6px; 
+    text-align: center; 
+    color: #4b5563; 
+    outline: none; 
+}
+
+.tabla-receta input:focus { 
+    border-color: #1d4ed8; 
+}
+
+.fila-receta { 
+    display: flex; 
+    gap: 24px; 
+    margin-bottom: 0; 
+    padding-top: 10px; 
+}
+
+.grupo { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.grupo label { 
+    font-weight: 700; 
+    margin-bottom: 8px; 
+    color: #4b5563; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+}
+
+.grupo input, 
+.grupo select { 
+    width: 100%; 
+    padding: 10px 14px; 
+    border: 1px solid #dce4ef; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    color: #4b5563; 
+    outline: none; 
+}
+
+.input-duo { 
+    display: flex; 
+    gap: 10px; 
+}
+
+/* Columna Derecha (Panel Lateral Farmacológico) */
+.panel-lateral { 
+    background: #f9fafb; 
+    border: 1px solid #dce4ef; 
+    border-radius: 12px; 
+}
+
+.panel-header { 
+    padding: 20px 24px; 
+    border-bottom: 1px solid #dce4ef; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.panel-header h3 { 
+    margin: 0; 
+    font-size: 16px; 
+    font-weight: 700; 
+    color: #111827; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.panel-body { 
+    padding: 24px; 
+}
+
+.med-card { 
+    background: #fff; 
+    border: 1px solid #dce4ef; 
+    border-radius: 8px; 
+    padding: 16px; 
+    margin-bottom: 16px; 
+}
+
+.med-card label { 
+    font-size: 10px; 
+    font-weight: 700; 
+    color: #6b7280; 
+    text-transform: uppercase; 
+    display: block; 
+    margin-bottom: 4px; 
+}
+
+.med-card h4 { 
+    margin: 0 0 12px 0; 
+    font-size: 15px; 
+    font-weight: 700; 
+    color: #1d4ed8; 
+}
+
+.med-card h4.placeholder { 
+    color: #6b7280; 
+    font-weight: 600; 
+}
+
+.med-details { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
+}
+
+.med-details p { 
+    margin: 0; 
+    font-size: 13px; 
+    color: #4b5563; 
+}
+
+.med-details p.placeholder { 
+    color: #9ca3af; 
+    font-style: italic; 
+}
+
+.info-note { 
+    display: flex; 
+    gap: 12px; 
+    font-size: 12px; 
+    color: #6b7280; 
+    padding: 20px 24px; 
+    border-top: 1px solid #dce4ef; 
+    align-items: center; 
+}
+
+/* =========================================
+   FOOTER ACCIONES
+========================================= */
+.acciones-footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 24px 0; 
+    border-top: 1px solid #dce4ef; 
+    margin-top: 20px; 
+}
+
+.btn-volver { 
+    color: #4b5563; 
+    font-weight: 600; 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+.btn-volver:hover { 
+    color: #111827; 
+}
+
+.acciones-botones { 
+    display: flex; 
+    gap: 16px; 
+}
+
+.btn-guardar { 
+    padding: 12px 24px; 
+    border: 1px solid #dce4ef; 
+    border-radius: 6px; 
+    background: #e5e7eb; 
+    color: #374151; 
+    font-weight: 600; 
+    cursor: pointer; 
+}
+
+.btn-imprimir { 
+    padding: 12px 24px; 
+    border: none; 
+    border-radius: 6px; 
+    background: #1d4ed8; 
+    color: white; 
+    font-weight: 600; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}

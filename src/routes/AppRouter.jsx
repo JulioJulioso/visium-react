@@ -11,25 +11,25 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<HomeLayout/>}>
-          <Route path="/home" element={<Home />} />
+        <Route element={<HomeLayout />}>
+          <Route path="/" element={<Home />} />
         </Route>
 
-        <Route element={<MainLayout/>}>
+        <Route element={<MainLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/gestion" element={<NuevoPaciente />} />
           <Route path="/recetas" element={<Recetas />} />
-        
+
         </Route>
-                
+
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Navigate to="/" replace />} />
 
-      
-        
+
+
       </Routes>
 
-    
+
     </BrowserRouter>
   );
 }

@@ -1,6 +1,11 @@
 import "./HeaderMenu.css";
+import { useLocation } from "react-router";
 
 export default function HeaderMenu (){
+
+  const location = useLocation();
+  const ocultarHeader = location.pathname === '/gestion';
+  
   return(
     <header class="topbar">
       <div className="topbar-left">
@@ -17,12 +22,12 @@ export default function HeaderMenu (){
       </div>
 
       <div className="topbar-right">
+        {!ocultarHeader && 
         <button className="btn-primary">
           <i className="bi bi-person-fill-add"></i>
-
           Nuevo Paciente
-
         </button>
+        }
         <button className="icon-btn">
           <i className="bi bi-bell"></i>
         </button>

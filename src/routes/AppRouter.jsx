@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "../pages/Login/Login";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import Recetas from "../pages/Recetas/Recetas";
 import MainLayout from "../layout/MainLayout";
 import HomeLayout from "../layout/HomeLayout";
 import Home from "../pages/Home/Home";
@@ -20,7 +21,12 @@ export default function AppRouter() {
                 
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Navigate to="/" replace />} />
+
+      <Route path="/recetas" element={<Recetas />} />
+        
       </Routes>
+
+    
     </BrowserRouter>
   );
 }

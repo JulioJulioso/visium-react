@@ -5,6 +5,7 @@ import "./MainLayout.css"; // Importa los estilos del layout
 import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
 
 export default function MainLayout() {
+  
   return (
     <div className="layout-container">
       {/* Columna Izquierda: Menú Lateral Fijo */}
@@ -12,7 +13,7 @@ export default function MainLayout() {
 
       {/* Columna Derecha: Vista variable (Outlet) + Footer */}
       <div className="content-wrapper">
-        <HeaderMenu />
+        <HeaderMenu /> 
         <main className="main-content">
           <Outlet />
         </main>

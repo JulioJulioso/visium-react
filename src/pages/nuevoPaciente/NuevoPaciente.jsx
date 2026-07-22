@@ -1,6 +1,6 @@
 import  { useState } from 'react';
-import './nuevoPaciente.css';
-
+import './NuevoPaciente.css';
+import { Link } from 'react-router';
 
 export default function NuevoPaciente() {
   // ===============================
@@ -52,24 +52,9 @@ export default function NuevoPaciente() {
   };
 
   return (
-    <div className="layout-unificado page-layout">
-      
+    <>
       {/* Contenido Principal */}
-      <div className="contenido-unificado main-area">
-        <header className="page-header">
-          <div className="header-top">
-            <button type="button" className="btn-icon">&larr;</button>
-            <h1>Ingreso Nuevo Paciente</h1>
-            <input type="search" placeholder="Buscar paciente o ID..." />
-            <button type="button" className="btn-nuevo">+ Nuevo Paciente</button>
-            <button type="button" className="btn-icon">&#128276;</button>
-            <span className="avatar"></span>
-            <span>Dr. Smith</span>
-          </div>
-          <p className="breadcrumbs"><a href="#pacientes">Pacientes</a> / Ingresar Nuevo Paciente</p>
-        </header>
-
-        <div className="page-body">
+      <div className="page-body">
           <div className="form-column">
             
             <section className="form-section">
@@ -149,9 +134,9 @@ export default function NuevoPaciente() {
             <footer className="action-bar">
               <p className="required-note">* Campos obligatorios</p>
               <div className="action-buttons">
-                <a href="#crear">
+                <Link to="/recetas">
                   <button type="button" className="btn-secundario">Crear Ficha</button>
-                </a>
+               </Link>
               </div>
             </footer>
           </div>
@@ -180,7 +165,6 @@ export default function NuevoPaciente() {
             </div>
           </aside>
         </div>
-      </div>
-    </div>
+        </>
   );
 }

@@ -1,17 +1,11 @@
 import React from 'react';
-import './Recetas.css'; // Asegúrate de que el archivo CSS esté en la misma carpeta
+import './Recetas.css';
 
 const RecetaPage = () => {
     return (
         <div className="layout-unificado">
-            {/* SIDEBAR */}
-            
-
             {/* CONTENIDO PRINCIPAL */}
             <div className="contenido-unificado">
-
-                {/* NAVBAR */}
-            
 
                 {/* BREADCRUMB */}
                 <div className="breadcrumb-bar">
@@ -45,21 +39,21 @@ const RecetaPage = () => {
                         </div>
                     </section>
 
-                    {/* GRID RECETA */}
-                    <section className="contenido-receta d-flex justify-content-center">
-
-                    
-                        <div>
-                            
-                            <div className="receta-card">
-                                <div className="titulo-receta">
-                                    <h2><i className="fa-solid fa-glasses text-primary"></i> Receta Óptica (Refracción)</h2>
-                                    <div className="botones-receta">
-                                        <button className="activo" type="button">Lejos</button>
-                                        <button type="button">Cerca</button>
-                                    </div>
+                    {/* SECCIÓN RECETA */}
+                    <section className="contenido-receta">
+                        
+                        {/* Tarjeta Refracción */}
+                        <div className="receta-card">
+                            <div className="titulo-receta">
+                                <h2><i className="fa-solid fa-glasses text-primary"></i> Receta Óptica (Refracción)</h2>
+                                <div className="botones-receta">
+                                    <button className="activo" type="button">Lejos</button>
+                                    <button type="button">Cerca</button>
                                 </div>
+                            </div>
 
+                            {/* Envoltorio con scroll para móviles */}
+                            <div className="tabla-receta-container">
                                 <table className="tabla-receta">
                                     <thead>
                                         <tr>
@@ -87,38 +81,38 @@ const RecetaPage = () => {
                                         </tr>
                                     </tbody>
                                 </table>
-
-                                <div className="fila-receta pb-2 border-bottom border-light">
-                                    <div className="grupo">
-                                        <label>Distancia Pupilar (DP)</label>
-                                        <div className="input-duo">
-                                            <input type="text" placeholder="Lejos (mm)" />
-                                            <input type="text" placeholder="Cerca (mm)" />
-                                        </div>
-                                    </div>
-                                    <div className="grupo">
-                                        <label>Material Sugerido</label>
-                                        <select defaultValue="Policarbonato con Antirreflejo">
-                                            <option value="Policarbonato con Antirreflejo">Policarbonato con Antirreflejo</option>
-                                            <option value="CR-39">CR-39</option>
-                                            <option value="Alto Índice">Alto Índice</option>
-                                        </select>
-                                    </div>
-                                </div>
                             </div>
 
-                            {/* Tarjeta Observaciones */}
-                            <div className="receta-card">
-                                <div className="grupo mb-0">
-                                    <label className="d-flex align-items-center gap-2 text-dark">
-                                        <i className="fa-solid fa-bars-staggered text-muted"></i> Indicaciones Clínicas y Observaciones
-                                    </label>
-                                    <textarea
-                                        rows="4"
-                                        className="form-control bg-light text-muted mt-2 border-light"
-                                        placeholder="Ej. Uso permanente para lectura, evitar exposición prolongada a pantallas sin filtros..."
-                                    ></textarea>
+                            <div className="fila-receta pb-2 border-bottom border-light">
+                                <div className="grupo">
+                                    <label>Distancia Pupilar (DP)</label>
+                                    <div className="input-duo">
+                                        <input type="text" placeholder="Lejos (mm)" />
+                                        <input type="text" placeholder="Cerca (mm)" />
+                                    </div>
                                 </div>
+                                <div className="grupo">
+                                    <label>Material Sugerido</label>
+                                    <select defaultValue="Policarbonato con Antirreflejo">
+                                        <option value="Policarbonato con Antirreflejo">Policarbonato con Antirreflejo</option>
+                                        <option value="CR-39">CR-39</option>
+                                        <option value="Alto Índice">Alto Índice</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Tarjeta Observaciones */}
+                        <div className="receta-card">
+                            <div className="grupo mb-0">
+                                <label className="d-flex align-items-center gap-2 text-dark">
+                                    <i className="fa-solid fa-bars-staggered text-muted"></i> Indicaciones Clínicas y Observaciones
+                                </label>
+                                <textarea
+                                    rows="4"
+                                    className="form-control bg-light text-muted mt-2 border-light"
+                                    placeholder="Ej. Uso permanente para lectura, evitar exposición prolongada a pantallas sin filtros..."
+                                ></textarea>
                             </div>
                         </div>
 
@@ -126,9 +120,6 @@ const RecetaPage = () => {
 
                     {/* FOOTER / ACCIONES */}
                     <footer className="acciones-footer">
-                        <a href="#volver-expediente" className="btn-volver">
-                            <i className="fa-solid fa-arrow-left"></i> Volver al Expediente
-                        </a>
                         <div className="acciones-botones">
                             <button type="button" className="btn-guardar">Guardar Borrador</button>
                             <button type="button" className="btn-imprimir">

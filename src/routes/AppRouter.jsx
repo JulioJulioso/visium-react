@@ -6,7 +6,9 @@ import MainLayout from "../layout/MainLayout";
 import HomeLayout from "../layout/HomeLayout";
 import Home from "../pages/Home/Home";
 import NuevoPaciente from "../pages/nuevoPaciente/NuevoPaciente";
-import GestionPacientes from "../pages/gestion-paciente/GestionPaciente";
+import Citas from "../pages/Citas/GestionCitas";
+import GestionCitas from "../pages/Citas/GestionCitas";
+import GestionPaciente from "../pages/gestion-paciente/GestionPaciente";
 
 export default function AppRouter() {
   return (
@@ -19,8 +21,9 @@ export default function AppRouter() {
         <Route element={<MainLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/paciente" element={<NuevoPaciente />} />
-          <Route path="/gestion" element={<GestionPacientes />} />
+          <Route path="/gestion" element={<GestionPaciente />} />
           <Route path="/recetas" element={<Recetas />} />
+          <Route path="/citas" element={<GestionCitas />} />
 
         </Route>
 

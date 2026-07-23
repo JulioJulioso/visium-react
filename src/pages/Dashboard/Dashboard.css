@@ -1,116 +1,101 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
 .main-content {
   padding: 12px;
-  padding-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
- 
-.Saludo {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
+  gap: 16px;
   width: 100%;
-  padding-left: 10px;
-  margin-left: 0;
 }
- 
+
+/* --- SALUDO --- */
+.Saludo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 0;
+}
+
 .SaludoDoctor {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding-left: 10px;
 }
+
 .Saludo h1 {
-  font-size: 36px;
-  margin-bottom: 4px;
+  font-size: 24px;
   color: #003d9b;
-  font-family: 'Inter', sans-serif;
-  margin-top: 0;
+  margin: 0 0 4px 0;
 }
+
 .Saludo p {
   color: #434654;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  margin-top: 0;
+  font-size: 15px;
+  margin: 0;
 }
- 
+
 .Saludo p strong {
   color: #003d9b;
-  font-family: 'Inter', sans-serif;
-  margin-top: 0;
 }
- 
-/* Tarjeta Paciente */
+
+/* --- TARJETA PACIENTE (VISTA CELULAR) --- */
 .grid-row-2 {
- display:flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- gap: 24px;
- width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
 }
- 
-* {
- box-sizing: border-box;
- margin: 0;
- padding: 0;
- font-family: 'Inter', sans-serif;
-}
- 
-/*Tarjeta Contenedora */
+
 .card-paciente {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Apilado vertical en celular */
   background-color: #f8fafc; 
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 24px;
+  padding: 16px;
   width: 100%;
-  max-width: 650px;
+  gap: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-/* --- SECCIÓN IZQUIERDA --- */
 .card-izquierda {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  width: 100%;
 }
 
 .paciente-header {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   align-items: flex-start;
 }
 
-/* Foto con borde azul */
 .avatar-wrapper {
-  width: 72px;
-  height: 72px;
-  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
   border: 2px solid #0056b3;
   background-color: #ffffff;
   flex-shrink: 0;
-
-  /* Centrado Flexbox */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
   overflow: hidden;
 }
 
 .avatar i {
-  font-size: 40px; 
-  color:grey;
-  line-height: 1 !important;
-  display: inline-block;
-  margin: 0;
+  font-size: 32px; 
+  color: grey;
 }
 
-/* Info del Paciente */
 .paciente-info {
   display: flex;
   flex-direction: column;
@@ -118,269 +103,283 @@
 
 .nombre-badge-row {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .paciente-nombre {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: #1e293b;
-  line-height: 1.2;
 }
 
-/* Badge Celeste */
 .badge-nuevo {
-  display:flex;
-  align-items: flex-end;
-  margin-right: 8px;
-  background-color: #e0f2fe;
-  background: #a5f3fc;
+  background-color: #a5f3fc;
   color: #0e7490;
   font-size: 10px;
   font-weight: 800;
-  padding: 4px 8px;
+  padding: 3px 6px;
   border-radius: 4px;
-  line-height: 1.1;
-  text-align: center;
-  letter-spacing: 0.5px;
 }
 
 .consulta-tipo {
-  margin: 6px 0 0 0;
-  font-size: 13px;
-  color: #64748b;
-  font-weight: 500;
-}
-
-.consulta-subtext {
-  margin: 0;
+  margin: 4px 0 0 0;
   font-size: 12px;
   color: #64748b;
 }
 
-/* Horario en Azul */
+.consulta-subtext {
+  font-size: 11px;
+  color: #64748b;
+}
+
 .horario-meta {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 8px;
+  margin-top: 6px;
   color: #004085;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 12px;
 }
 
-/* Botón Iniciar Atención */
 .btn-iniciar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #003896; /* Azul Oscuro */
+  background-color: #003896;
   color: #ffffff;
   border: none;
   border-radius: 6px;
-  padding: 10px 16px;
-  font-size: 14px;
+  padding: 10px 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
   width: 100%;
-  max-width: 280px;
 }
 
-.btn-iniciar:hover {
-  background-color: #002868;
-}
-
-/* --- LÍNEA DIVISORIA VERTICAL --- */
 .separador-vertical {
-  width: 1px;
-  height: 140px;
+  width: 100%;
+  height: 1px;
   background-color: #cbd5e1;
-  margin: 0px 28px;
+  margin: 0;
 }
 
-/* --- SECCIÓN DERECHA --- */
 .card-derecha {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-  min-width: 160px;
+  gap: 10px;
+  width: 100%;
 }
 
-/* Botón Estado del perfil (Gris) */
-.btn-estado {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background-color: #e2e8f0;
-  color: #0f172a;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* Botón Editar Perfil (Borde Azul) */
+.btn-estado,
 .btn-editar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #ffffff;
-  color: #004085;
-  border: 1px solid #93c5fd;
   border-radius: 8px;
-  padding: 8px 14px;
+  padding: 10px 14px;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.btn-editar:hover {
-  background-color: #f0f7ff;
+.btn-estado {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  border: none;
 }
- 
-/* 🏷️ ESTILO: Contenedor Principal de la Agenda */
+
+.btn-editar {
+  background-color: #ffffff;
+  color: #004085;
+  border: 1px solid #93c5fd;
+}
+
+/* --- AGENDA (VISTA CELULAR) --- */
 .agenda-container {
   width: 100%;
-  margin-left: -170px;
-  min-width: 600px;
-  max-width: 750px;
+  margin-left: 0;
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-self: start;
+  overflow-x: auto; 
 }
- 
-/* Alineación del Título y el enlace */
+
 .agenda-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #f1f5f9;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
 }
- 
+
 .agenda-titulo {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #1e293b;
 }
- 
+
 .link-calendario {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #0056b3;
   text-decoration: none;
   font-weight: 600;
 }
- 
-.link-calendario:hover {
-  text-decoration: underline;
-}
- 
-/* Tabla Reutilizable */
+
 .tabla-agenda {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+  min-width: 450px;
 }
- 
-/* Encabezados de Columnas */
+
 .tabla-agenda th {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #64748b;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   border-bottom: 1px solid #f1f5f9;
-  width: min-content;
 }
- 
-/* Celdas de Datos */
+
 .tabla-agenda td {
-  padding: 16px 0;
+  padding: 10px 4px;
   border-bottom: 1px solid #f1f5f9;
-  font-size: 0.95rem;
-  vertical-align: middle;
+  font-size: 0.85rem;
 }
- 
-/* Quitar el borde inferior a la última fila */
-.tabla-agenda tr:last-child td {
-  border-bottom: none;
-}
- 
-/* Estilos de Columnas Específicas */
-.col-hora {
-  color: #0056b3;
-  font-weight: 700;
-  width: 15%;
-}
- 
-.col-paciente {
-  font-weight: 600;
-  color: #1e293b;
-  width: 25%;
-}
- 
-.col-motivo {
-  color: #475569;
-  width: 40%;
-}
- 
-/* Píldoras de Estado */
+
+.col-hora { color: #0056b3; font-weight: 700; width: 15%; }
+.col-paciente { font-weight: 600; color: #1e293b; width: 30%; }
+.col-motivo { color: #475569; width: 35%; }
+
 .badge-status {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  padding: 6px 12px;
+  padding: 4px 8px;
   border-radius: 4px;
-  display: inline-block;
-  text-align: center;
-  letter-spacing: 0.2px;
+  white-space: nowrap;
 }
- 
-/* Paleta de colores exacta de los estados */
-.status-completado {
-  background-color: #e2fbe8;
-  color: #15803d;
-}
- 
-.status-siguiente {
-  background-color: #dbeafe;
-  color: #1d4ed8;
-}
- 
-.status-espera {
-  background-color: #f1f5f9;
-  color: #475569;
-}
- 
-.status-programado {
-  background-color: #f8fafc;
-  color: #94a3b8;
-  border: 1px solid #e2e8f0;
-  padding: 5px 11px; /* Compensa el tamaño por el borde físico */
-}
- 
-/* Estado dinámico extra para cuando la consulta empiece */
-.status-en-curso {
-  background-color: #fef3c7;
-  color: #b45309;
-}
- 
-/* tiene menú contextual
+
+.status-completado { background-color: #e2fbe8; color: #15803d; }
+.status-siguiente { background-color: #dbeafe; color: #1d4ed8; }
+.status-espera { background-color: #f1f5f9; color: #475569; }
+.status-programado { background-color: #f8fafc; color: #94a3b8; border: 1px solid #e2e8f0; }
+.status-en-curso { background-color: #fef3c7; color: #b45309; }
 
 
-tienes menú contextual */
+/* ============================================================
+   2. MEDIA QUERY: TABLETS 
+   ============================================================ */
+@media screen and (min-width: 640px) {
+  
+  .main-content {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .Saludo h1 {
+    font-size: 30px;
+  }
+
+  /* La tarjeta cambia a orientación horizontal */
+  .card-paciente {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .card-izquierda {
+    flex: 1;
+  }
+
+  /* El separador vuelve a ser vertical */
+  .separador-vertical {
+    width: 1px;
+    height: 130px;
+    margin: 0 16px;
+  }
+
+  .card-derecha {
+    width: auto;
+    min-width: 170px;
+  }
+
+  .btn-iniciar {
+    max-width: 280px;
+  }
+
+  .agenda-container {
+    padding: 20px;
+  }
+}
+
+
+/* ============================================================
+   3. MEDIA QUERY: COMPUTADORES 
+   ============================================================ */
+@media screen and (min-width: 1024px) {
+
+  .main-content {
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto; 
+  }
+
+  .Saludo h1 {
+    font-size: 36px;
+  }
+
+  .Saludo p {
+    font-size: 18px;
+  }
+
+  .card-paciente {
+    max-width: 750px;
+    padding: 24px;
+  }
+
+  .avatar-wrapper {
+    width: 72px;
+    height: 72px;
+  }
+
+  .avatar i {
+    font-size: 40px;
+  }
+
+  .paciente-nombre {
+    font-size: 16px;
+  }
+
+  .separador-vertical {
+    height: 140px;
+    margin: 0 28px;
+  }
+
+  .card-derecha {
+    min-width: 180px;
+  }
+
+  .agenda-container {
+    max-width: 750px;
+    padding: 24px;
+  }
+
+  .tabla-agenda th {
+    font-size: 0.75rem;
+  }
+
+  .tabla-agenda td {
+    padding: 16px 0;
+    font-size: 0.95rem;
+  }
+}

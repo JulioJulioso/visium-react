@@ -1,110 +1,247 @@
+/* ============================================================
+   1. ESTILOS BASE Y MOBILE-FIRST (Celulares: < 768px)
+   ============================================================ */
+* {
+  box-sizing: border-box;
+}
 
-/* MenuLateral.css */
+/* El sidebar funciona como una barra superior colapsable en móviles */
 .sidebar {
+  width: 100%;
+  height: auto;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 10px 16px;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb;
+  border-right: none;
+  max-height: 100vh;
+  overflow-y: auto; /* Permite scroll si el menú abierto excede el alto del teléfono */
+}
+
+/* Logo */
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+  min-width: 0;
+}
+
+.sidebar .logo-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #0b5ed7;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.sidebar .logo h2 {
+  margin: 0;
+  color: #0b5ed7;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Subtítulo oculto por defecto en pantallas pequeñas */
+.sidebar .logo span {
+  display: none;
+  color: #888888;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+/* Botón Hamburguesa (Visible en celular y tablet) */
+.sidebar .sidebar-toggle {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d8e2f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0b5ed7;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar .sidebar-toggle:hover {
+  background: #eef5ff;
+}
+
+/* Menú y Footer ocultos por defecto en celular */
+.sidebar .menu,
+.sidebar .sidebar-bottom {
+  display: none;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.sidebar .menu {
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+
+.sidebar .sidebar-bottom {
+  flex-direction: column;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* 🏷️ CLASE ACTIVA (Cuando abres el menú en React/JS) */
+.sidebar.is-open .menu,
+.sidebar.is-open .sidebar-bottom {
+  display: flex;
+}
+
+/* Enlaces de Navegación */
+.sidebar .menu a,
+.sidebar .sidebar-bottom a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar .menu a:hover,
+.sidebar .sidebar-bottom a:hover {
+  background: #eef5ff;
+  color: #0b5ed7;
+}
+
+.sidebar .menu a.active {
+  background: #eef5ff;
+  color: #0b5ed7;
+  font-weight: 600;
+}
+
+.sidebar i {
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+
+/* ============================================================
+   2. MEDIA QUERY: TABLETS (Desde 768px hasta 1023px)
+   ============================================================ */
+@media screen and (min-width: 768px) {
+  .sidebar {
+    padding: 12px 20px;
+  }
+
+  .sidebar .logo {
+    gap: 15px;
+  }
+
+  .sidebar .logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
+
+  .sidebar .logo h2 {
+    font-size: 22px;
+  }
+
+  .sidebar .logo span {
+    display: block; /* Muestra el subtítulo en tablets */
+  }
+
+  .sidebar .menu a,
+  .sidebar .sidebar-bottom a {
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+}
+
+
+/* ============================================================
+   3. MEDIA QUERY: ESCRITORIO (Desde 1024px en adelante)
+   ============================================================ */
+@media screen and (min-width: 1024px) {
+  /* El sidebar vuelve a ser una columna fija a la izquierda */
+  .sidebar {
     width: 260px;
-    height: 100vh; /* CAMBIO CLAVE: Usa 100vh en lugar de max-content */
-    padding: 15px;
+    height: 100vh;
     position: sticky;
     top: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     flex-shrink: 0;
-    overflow-y: auto;
-    background: #ffffff !important;
+    padding: 15px;
     border-right: 1px solid #e5e7eb;
+    border-bottom: none;
     z-index: 100;
-    box-sizing: border-box;
-}
+  }
 
-.sidebar .logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 10px 25px;
-}
-
-.sidebar .sidebar-toggle {
+  /* Ocultamos el botón hamburguesa */
+  .sidebar .sidebar-toggle {
     display: none;
-    width: 42px;
-    height: 42px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #d8e2f0;
-    border-radius: 12px;
-    background: #ffffff;
-    color: #0b5ed7;
-    cursor: pointer;
-}
+  }
 
-.sidebar .sidebar-toggle:hover {
-    background: #eef5ff;
-}
+  .sidebar .logo {
+    padding: 15px 10px 25px;
+  }
 
-.sidebar .logo-icon {
-    width: 42px;
-    height: 42px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: #0b5ed7;
-    color: #ffffff;
-    font-size: 20px;
-}
-
-.sidebar .logo h2 {
-    margin: 0;
-    color: #0b5ed7;
+  .sidebar .logo h2 {
     font-size: 24px;
-    font-weight: 700;
-    line-height: 1.1;
-}
+  }
 
-.sidebar .logo span {
-    display: block;
-    color: #888888;
-    font-size: 11px;
-    line-height: 1.3;
-}
+  /* El menú y el footer están siempre visibles */
+  .sidebar .menu,
+  .sidebar .sidebar-bottom {
+    display: flex !important;
+    grid-column: auto;
+  }
 
-.sidebar .menu {
-    display: flex;
+  .sidebar .menu {
     flex: 0 0 auto;
-    flex-direction: column;
-}
+    gap: 0;
+    padding-top: 0;
+  }
 
-.sidebar .menu a,
-.sidebar .sidebar-bottom a {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 5px 0;
+  .sidebar .menu a,
+  .sidebar .sidebar-bottom a {
+    margin: 4px 0;
     padding: 14px 20px;
-    position: relative;
     border-radius: 12px;
-    color: #4b5563;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
+    position: relative;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
+  }
 
-.sidebar .menu a:hover,
-.sidebar .sidebar-bottom a:hover {
-    background: #eef5ff;
-    color: #0b5ed7;
+  /* Efectos hover y activo exclusivos de escritorio */
+  .sidebar .menu a:hover,
+  .sidebar .sidebar-bottom a:hover {
     transform: translateX(4px);
-}
+  }
 
-.sidebar .menu a.active {
-    background: #eef5ff;
-    color: #0b5ed7;
-    font-weight: 600;
-}
-
-.sidebar .menu a.active::before {
+  .sidebar .menu a.active::before {
     content: "";
     position: absolute;
     top: 0;
@@ -113,102 +250,10 @@
     height: 100%;
     border-radius: 4px;
     background: #0b5ed7;
-}
+  }
 
-.sidebar i {
-    width: 20px;
-    text-align: center;
-    font-size: 18px;
-}
-
-.sidebar .sidebar-bottom {
-    display: flex;
-    flex-direction: column;
+  .sidebar .sidebar-bottom {
     margin-top: auto;
     padding-top: 15px;
-    border-top: 1px solid #e5e7eb;
-}
-
-/* ========================================================
-   DISEÑO RESPONSIVO (Móviles y Tablets)
-   ======================================================== */
-@media (max-width: 900px) {
-    .sidebar {
-        width: 100%;
-        min-height: auto;
-        height: auto;
-        position: sticky;
-        top: 0;
-        z-index: 200;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        padding: 10px 12px;
-        border-right: 0;
-        border-bottom: 1px solid #e5e7eb;
-    }
-
-    .sidebar .logo {
-        min-width: 0;
-        padding: 6px 4px 10px;
-    }
-
-    .sidebar .sidebar-toggle {
-        display: inline-flex;
-    }
-
-    .sidebar .logo span,
-    .sidebar .sidebar-bottom {
-        display: none;
-    }
-
-    .sidebar .menu {
-        grid-column: 1 / -1;
-        display: none;
-        flex-direction: column;
-        gap: 8px;
-        padding-top: 10px;
-        padding-bottom: 4px;
-    }
-
-    
-
-    /* Clase activa para cuando manejes el clic del botón en React */
-    .sidebar.is-open .menu {
-        display: flex;
-    }
-
-    .sidebar.is-open .sidebar-bottom {
-        grid-column: 1 / -1;
-        display: flex;
-        margin-top: 8px;
-        padding-top: 8px;
-    }
-
-    .sidebar .menu a {
-        width: 100%;
-        margin: 0;
-        padding: 12px 14px;
-        white-space: nowrap;
-    }
-
-    
-    .sidebar .menu a:hover {
-        transform: none;
-    }
-
-    .sidebar .menu a.active::before {
-        display: none;
-     
-    }
-}
-
-@media (max-width: 520px) {
-    .sidebar .logo h2 {
-        font-size: 20px;
-    }
-    .sidebar .menu a {
-        gap: 8px;
-        font-size: 13px;
-    }
+  }
 }

@@ -1,22 +1,39 @@
-/* 1. Contenedor Raíz: Alinea el sidebar a la izquierda y el contenido a la derecha */
+/* MainLayout.css */
+
+/* ============================================================
+   1. MÓVILES Y TABLETS (Mobile-First)
+   ============================================================ */
 .layout-container {
   display: flex;
-  flex-direction: row; /* Coloca los hijos lado a lado */
-  min-height: 100vh;   /* Ocupa como mínimo todo el alto de la ventana */
+  flex-direction: column; 
+  min-height: 100vh;
   width: 100%;
 }
 
-/* 2. Envoltorio del contenido (Toda la zona derecha) */
 .content-wrapper {
-  flex: 1;             /* Toma todo el ancho sobrante de la pantalla */
+  flex: 1;
   display: flex;
-  flex-direction: column; /* Apila el main (<Outlet/>) y el Footer verticalmente */
-  min-width: 0;        /* Evita desbordamientos horizontales por elementos grandes */
+  flex-direction: column;
+  width: 100%;
+  min-width: 0; 
 }
 
-/* 3. Área donde se renderiza cada vista (<Outlet />) */
 .main-content {
-  flex: 1;             /* Empuja al Footer al final de la página si hay poco contenido */
-  padding: 24px;       /* Relleno interno para la vista */
+  flex: 1; 
+  padding: 16px; 
+  width: 100%;
   box-sizing: border-box;
+}
+
+/* ============================================================
+   2. COMPUTADORES Y ESCRITORIO (Desde 1024px)
+   ============================================================ */
+@media screen and (min-width: 1024px) {
+  .layout-container {
+    flex-direction: row; 
+  }
+
+  .main-content {
+    padding: 24px; 
+  }
 }

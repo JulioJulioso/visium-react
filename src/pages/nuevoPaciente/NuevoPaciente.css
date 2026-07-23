@@ -359,6 +359,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* FIX: Base styles updated para que funcionen bien con <Link> de React Router */
 .btn-cancelar,
 .btn-secundario,
 .btn-primario {
@@ -367,6 +368,9 @@ body {
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn-cancelar,
@@ -391,6 +395,7 @@ body {
     .page-body { grid-template-columns: 1fr; }
 }
 
+/* FIX: Bloque media query actualizado para responsividad móvil */
 @media (max-width: 768px) {
     .page-layout { grid-template-columns: 1fr; }
     .sidebar-vacio { display: none; }
@@ -419,15 +424,34 @@ body {
         display: none;
     }
 
-    .checks,
+    .action-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
     .action-buttons,
     .action-buttons a {
         width: 100%;
+        display: block; 
     }
 
     .btn-secundario,
     .btn-primario,
     .btn-cancelar {
         width: 100%;
+        margin-bottom: 8px; 
+    }
+
+    .btn-secundario:last-child,
+    .btn-primario:last-child,
+    .btn-cancelar:last-child {
+        margin-bottom: 0;
+    }
+
+    .checks {
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
     }
 }

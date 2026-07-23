@@ -134,8 +134,8 @@ export default function NuevoPaciente() {
             <footer className="action-bar">
               <p className="required-note">* Campos obligatorios</p>
               <div className="action-buttons">
-                <Link to="/recetas">
-                  <button type="button" className="btn-secundario">Crear Ficha</button>
+                <Link to="/recetas" className="btn-secundario" >
+                  Crear Ficha
                </Link>
               </div>
             </footer>

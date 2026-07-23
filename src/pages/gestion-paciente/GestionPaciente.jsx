@@ -1,5 +1,5 @@
 import { useGestionPacientes } from './useGestionPacientes'; 
-import './gestionPaciente.css';
+import './gestion-paciente.css';
 
 export default function GestionPacientes() {
   // Extraemos toda la lógica y estados de nuestro Custom Hook

@@ -212,7 +212,7 @@ function Login() {
 
                                         className="form-control"
 
-                                        placeholder="Ingrese correo"
+                                        placeholder="ej. MED-123456"
 
                                         value={medico}
 
@@ -237,11 +237,17 @@ function Login() {
                             <div className="mb-3 position-relative">
 
 
-                                <label className="form-label-custom mb-2">
+                            <label className="form-label-custom mb-2 d-block">
 
-                                    Contraseña
+                                Contraseña
 
-                                </label>
+                                <a className="forgot-password" href="#">
+
+                                    ¿Olvidó su contraseña?
+
+                                </a>
+
+                            </label>
 
 
 
@@ -264,7 +270,7 @@ function Login() {
 
                                         className="form-control"
 
-                                        placeholder="Ingrese contraseña"
+                                        placeholder="••••••••"
 
                                         value={password}
 

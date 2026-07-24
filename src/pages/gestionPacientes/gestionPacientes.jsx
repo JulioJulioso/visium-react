@@ -73,44 +73,44 @@ export default function GestionPacientes() {
 
           <div className="patients-table-scroll">
             <table>
-            <thead>
-              <tr>
-                <th>Paciente</th>
-                <th>ID</th>
-                <th>Última Consulta</th>
-                <th>Condición</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {currentPatients.map((p) => {
-                const globalIndex = patients.findIndex(pat => pat.id === p.id);
-                return (
-                  <tr key={p.id} className="patient-row">
-                    <td className="patient">
-                      <img src={p.img} alt={p.nombre} />
-                      <div>
-                        <strong>{p.nombre}</strong>
-                        <small>{p.edad} años · {p.sexo}</small>
-                      </div>
-                    </td>
-                    <td>{p.id}</td>
-                    <td>{p.consulta}</td>
-                    <td>
-                      <span className={`badge ${p.color}`}>{p.condicion}</span>
-                    </td>
-                    <td>
-                      <button className="recipe-btn" onClick={() => alert("Módulo de recetas")}>
-                        Crear Receta
-                      </button>
-                      <button className="menu-btn action-btn" onClick={(e) => handleContextMenu(e, globalIndex)}>
-                        <i className="fa-solid fa-ellipsis"></i>
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
+              <thead>
+                <tr>
+                  <th>Paciente</th>
+                  <th>ID</th>
+                  <th>Última Consulta</th>
+                  <th>Condición</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {currentPatients.map((p) => {
+                  const globalIndex = patients.findIndex(pat => pat.id === p.id);
+                  return (
+                    <tr key={p.id} className="patient-row">
+                      <td className="patient">
+                        <img src={p.img} alt={p.nombre} />
+                        <div>
+                          <strong>{p.nombre}</strong>
+                          <small>{p.edad} años · {p.sexo}</small>
+                        </div>
+                      </td>
+                      <td>{p.id}</td>
+                      <td>{p.consulta}</td>
+                      <td>
+                        <span className={`badge ${p.color}`}>{p.condicion}</span>
+                      </td>
+                      <td>
+                        <button className="recipe-btn" onClick={() => alert("Módulo de recetas")}>
+                          <i className="bi bi-file-earmark-medical"></i> Crear Receta
+                        </button>
+                        <button className="menu-btn action-btn" onClick={(e) => handleContextMenu(e, globalIndex)} aria-label="Más opciones">
+                          <i className="bi bi-three-dots-vertical"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
             </table>
           </div>
           <div className="pagination">
@@ -118,12 +118,12 @@ export default function GestionPacientes() {
               <span>Mostrando {startRecord}-{endRecord} de {filteredPatients.length} pacientes</span>
             </div>
             <div className="pagination-buttons">
-              <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
-                <i className="fa-solid fa-chevron-left"></i>
+              <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1} aria-label="Página anterior">
+                <i className="bi bi-chevron-left"></i>
               </button>
               <span>Página {currentPage} de {totalPages}</span>
-              <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
-                <i className="fa-solid fa-chevron-right"></i>
+              <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages} aria-label="Página siguiente">
+                <i className="bi bi-chevron-right"></i>
               </button>
             </div>
           </div>

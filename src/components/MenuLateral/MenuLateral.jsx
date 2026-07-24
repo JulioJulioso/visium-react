@@ -38,8 +38,7 @@ export default function MenuLateral() {
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isOpen}
         >
-          {/* 🔴 Corregido: className en vez de class */}
-          <i className={`fa-solid ${isOpen ? "fa-xmark" : "fa-bars"}`}></i>
+          <i className={`bi ${isOpen ? "bi-x-lg" : "bi-list"}`}></i>
         </button>
       </div>
 

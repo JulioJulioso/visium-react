@@ -71,7 +71,8 @@ export default function GestionPacientes() {
             </div>
           </div>
 
-          <table>
+          <div className="patients-table-scroll">
+            <table>
             <thead>
               <tr>
                 <th>Paciente</th>
@@ -82,25 +83,6 @@ export default function GestionPacientes() {
               </tr>
             </thead>
             <tbody>
-              <tr className="pagination-row" style={{ display: 'contents' }}>
-                <td colSpan="5" style={{ padding: 0 }}>
-                  <div className="pagination">
-                    <div className="pagination-info">
-                      <span>Mostrando {startRecord}-{endRecord} de {filteredPatients.length} pacientes</span>
-                    </div>
-                    <div className="pagination-buttons">
-                      <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
-                        <i className="fa-solid fa-chevron-left"></i>
-                      </button>
-                      <span>Página {currentPage} de {totalPages}</span>
-                      <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
-                        <i className="fa-solid fa-chevron-right"></i>
-                      </button>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-
               {currentPatients.map((p) => {
                 const globalIndex = patients.findIndex(pat => pat.id === p.id);
                 return (
@@ -129,7 +111,22 @@ export default function GestionPacientes() {
                 );
               })}
             </tbody>
-          </table>
+            </table>
+          </div>
+          <div className="pagination">
+            <div className="pagination-info">
+              <span>Mostrando {startRecord}-{endRecord} de {filteredPatients.length} pacientes</span>
+            </div>
+            <div className="pagination-buttons">
+              <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
+                <i className="fa-solid fa-chevron-left"></i>
+              </button>
+              <span>Página {currentPage} de {totalPages}</span>
+              <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
+                <i className="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
         </div>
         {/* 👆 FIN DEL CONTENEDOR 👆 */}
 

@@ -474,6 +474,12 @@
         width: 100%;
     }
 
+    .patients-table-scroll {
+        width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+    }
+
     tbody tr {
         transition: .25s;
     }
@@ -841,6 +847,110 @@
         to {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        :scope {
+            min-width: 0;
+            overflow-x: hidden;
+        }
+
+        .dashboard {
+            padding: 20px 16px;
+        }
+
+        .dashboard-header {
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 28px;
+            line-height: 1.1;
+        }
+
+        .dashboard-header p {
+            font-size: 14px;
+        }
+
+        .add-patient {
+            align-self: stretch;
+            padding: 13px 16px;
+        }
+
+        .cards {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 14px;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        .card-info span {
+            font-size: 13px;
+        }
+
+        .card-info h2 {
+            margin-top: 4px;
+            font-size: 20px;
+        }
+
+        .patients-container {
+            margin-top: 26px;
+            padding: 18px;
+            border-radius: 14px;
+        }
+
+        .patients-header {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .patients-actions {
+            width: 100%;
+            gap: 10px;
+        }
+
+        .filter-btn,
+        .export-btn {
+            flex: 1;
+            padding: 10px 12px;
+        }
+
+        .patient-tabs {
+            margin-top: 12px;
+        }
+
+        .patients-table-scroll table {
+            min-width: 720px;
+        }
+
+        th,
+        td {
+            padding: 14px 12px;
+            font-size: 13px;
+        }
+
+        .pagination {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+            margin-top: 18px;
         }
     }
 

@@ -6,23 +6,34 @@
 - Se incorporaron símbolos a botones que se mostraban vacíos en Gestión de Pacientes.
 - Se agregó una animación de apertura y cierre al menú hamburguesa en móvil y tablet.
 - Se añadió una transición que transforma el botón hamburguesa en el logo al desplegar el menú.
+- Se incorporaron al menú de pacientes las acciones «Ver última ficha», «Ver fichas», «Editar datos personales» y «Eliminar».
+- Se añadieron ventanas emergentes temporales para las acciones de consulta de fichas.
+- Se agregaron fecha de nacimiento, teléfono y correo electrónico al modelo local de pacientes.
 
 ### Modificado
 - Se aplicó al menú lateral un estilo invertido con fondo azul oscuro, textos blancos y estados hover destacados.
 - Se reemplazó la barra y el desplazamiento del hover por un subrayado animado en los textos de navegación.
 - Se ocultó el ícono principal del logo en la versión responsiva y se reposicionó el botón de despliegue.
+- Se redujo el espacio vertical vacío del menú lateral en su versión responsiva.
 - Se mejoró la responsividad de Gestión de Pacientes, incluyendo tarjetas, tablas, acciones y paginación.
 - Se actualizó el encabezado de Gestión de Pacientes.
+- Se alineó el botón de más opciones junto al botón «Crear Receta».
+- Se limitó la edición de pacientes a nombre completo, RUT, fecha de nacimiento, sexo biológico, teléfono y email.
+- Se actualizó automáticamente la edad del paciente a partir de su fecha de nacimiento.
+- Se mejoró la distribución de espacios del formulario «Editar datos personales».
 - Se cambió el nombre mostrado en el acceso de «Visium Pro» a «Visium».
 - Se corrigió la interfaz del login y su responsividad.
 
 ### Corregido
 - Se corrigió la carga y persistencia de pacientes en `localStorage` mediante una clave específica de la aplicación.
 - Se corrigió la visualización de datos y controles en Gestión de Pacientes.
+- Se corrigió el posicionamiento del menú contextual para mantenerlo dentro de la ventana y alineado con su botón.
+- Se corrigió el botón de más opciones para que cierre el menú contextual al presionarlo nuevamente.
+- Se añadió el ícono visible de papelera a la acción «Eliminar».
 
 ### Quitado
 
--Se quita boton agregar cliente de gestionPacientes
+- Se quitó el botón para agregar pacientes de Gestión de Pacientes.
 
 ## 2026-07-23
 

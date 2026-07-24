@@ -97,12 +97,14 @@ export default function GestionPacientes() {
                         <span className={`badge ${p.color}`}>{p.condicion}</span>
                       </td>
                       <td>
-                        <button className="recipe-btn" onClick={() => alert("Módulo de recetas")}>
-                          <i className="bi bi-file-earmark-medical"></i> Crear Receta
-                        </button>
-                        <button className="menu-btn action-btn" onClick={(e) => handleContextMenu(e, globalIndex)} aria-label="Más opciones">
-                          <i className="bi bi-three-dots-vertical"></i>
-                        </button>
+                        <div className="row-actions">
+                          <button className="recipe-btn" onClick={() => alert("Módulo de recetas")}>
+                            <i className="bi bi-file-earmark-medical"></i> Crear Receta
+                          </button>
+                          <button className="menu-btn action-btn" onClick={(e) => handleContextMenu(e, globalIndex)} aria-label="Más opciones">
+                            <i className="bi bi-three-dots-vertical"></i>
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   );
@@ -131,11 +133,11 @@ export default function GestionPacientes() {
 
       {/* Menú Contextual */}
       {contextMenu.visible && (
-        <div className="context-menu show" style={{ left: contextMenu.x, top: contextMenu.y, position: 'absolute' }}>
-          <button onClick={() => alert("Ficha del paciente")}><i className="fa-regular fa-eye"></i> Ver ficha</button>
-          <button onClick={() => handleOpenModal(contextMenu.patientIndex)}><i className="fa-regular fa-pen-to-square"></i> Editar</button>
-          <button onClick={() => alert("Módulo de recetas")}><i className="fa-solid fa-stethoscope"></i> Crear receta</button>
-          <button onClick={() => handleDeletePatient(contextMenu.patientIndex)}><i className="fa-regular fa-trash-can"></i> Eliminar</button>
+        <div className="context-menu show" style={{ left: contextMenu.x, top: contextMenu.y }}>
+          <button onClick={() => alert("Prueba: aquí se mostrará la última ficha del paciente.")}><i className="bi bi-file-earmark-medical"></i> Ver última ficha</button>
+          <button onClick={() => alert("Prueba: aquí se mostrará el historial de fichas del paciente.")}><i className="bi bi-folder2-open"></i> Ver fichas</button>
+          <button onClick={() => handleOpenModal(contextMenu.patientIndex)}><i className="bi bi-person-gear"></i> Editar datos personales</button>
+          <button onClick={() => handleDeletePatient(contextMenu.patientIndex)}><i className="bi bi-trash3"></i> Eliminar</button>
         </div>
       )}
 
@@ -144,41 +146,43 @@ export default function GestionPacientes() {
         <div className="modal show" onClick={() => setIsModalOpen(false)}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <div className="modal-header">
-              <h2>{editingIndex >= 0 ? "Editar Paciente" : "Nuevo Paciente"}</h2>
-              <button onClick={() => setIsModalOpen(false)}>&times;</button>
+              <h2>{editingIndex >= 0 ? "Editar datos personales" : "Nuevo paciente"}</h2>
+              <button type="button" onClick={() => setIsModalOpen(false)} aria-label="Cerrar">&times;</button>
             </div>
             <form onSubmit={handleFormSubmit}>
               <div className="form-group">
-                <label>Nombre</label>
+                <label>Nombre completo</label>
                 <input type="text" required value={formData.nombre} onChange={e => setFormData({ ...formData, nombre: e.target.value })} />
+              </div>
+              <div className="form-group">
+                <label>RUT (ID)</label>
+                <input type="text" required value={formData.id} onChange={e => setFormData({ ...formData, id: e.target.value })} />
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Edad</label>
-                  <input type="number" required value={formData.edad} onChange={e => setFormData({ ...formData, edad: e.target.value })} />
+                  <label>Fecha de nacimiento</label>
+                  <input type="date" required value={formData.fechaNacimiento} onChange={e => setFormData({ ...formData, fechaNacimiento: e.target.value })} />
                 </div>
                 <div className="form-group">
-                  <label>Sexo</label>
+                  <label>Sexo biológico</label>
                   <select value={formData.sexo} onChange={e => setFormData({ ...formData, sexo: e.target.value })}>
                     <option>Femenino</option>
                     <option>Masculino</option>
                   </select>
                 </div>
               </div>
-              <div className="form-group">
-                <label>ID</label>
-                <input type="text" required value={formData.id} onChange={e => setFormData({ ...formData, id: e.target.value })} />
-              </div>
-              <div className="form-group">
-                <label>Última consulta</label>
-                <input type="date" value={formData.consulta} onChange={e => setFormData({ ...formData, consulta: e.target.value })} />
-              </div>
-              <div className="form-group">
-                <label>Condición</label>
-                <input type="text" value={formData.condicion} onChange={e => setFormData({ ...formData, condicion: e.target.value })} />
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Teléfono</label>
+                  <input type="tel" required value={formData.telefono} onChange={e => setFormData({ ...formData, telefono: e.target.value })} />
+                </div>
+                <div className="form-group">
+                  <label>Email</label>
+                  <input type="email" required value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} />
+                </div>
               </div>
               <div className="modal-footer">
-                <button type="submit" className="save-btn">Guardar Paciente</button>
+                <button type="submit" className="save-btn">Guardar cambios</button>
               </div>
             </form>
           </div>

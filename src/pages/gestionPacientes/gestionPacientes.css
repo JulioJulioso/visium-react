@@ -554,6 +554,11 @@
     }
 
     .recipe-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        white-space: nowrap;
         box-shadow: 0 8px 18px rgba(37, 99, 235, .25);
         background: #0b5ed7;
         color: white;
@@ -570,14 +575,23 @@
         background: #0849a6;
     }
 
+    .row-actions {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        white-space: nowrap;
+    }
+
     .menu-btn {
+        flex: 0 0 40px;
         width: 40px;
         height: 40px;
         border: none;
         background: white;
         cursor: pointer;
         border-radius: 10px;
-        margin-left: 8px;
+        margin-left: 0;
         transition: .3s;
     }
 
@@ -603,7 +617,8 @@
     }
 
     .modal-content {
-        width: 520px;
+        width: min(520px, calc(100vw - 32px));
+        max-height: calc(100vh - 40px);
         background: white;
         border-radius: 18px;
         overflow: hidden;
@@ -641,8 +656,10 @@
         cursor: pointer;
     }
 
-    form {
+    .modal-content form {
         padding: 25px;
+        max-height: calc(100vh - 115px);
+        overflow-y: auto;
     }
 
     .form-group {
@@ -704,11 +721,11 @@
     CONTEXT MENU
 ======================*/
     .context-menu {
-        position: absolute;
+        position: fixed;
         display: none;
         flex-direction: column;
         background: white;
-        width: 210px;
+        width: 250px;
         border-radius: 14px;
         box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
         overflow: hidden;
@@ -720,6 +737,9 @@
     }
 
     .context-menu button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         background: none;
         border: none;
         text-align: left;
@@ -951,6 +971,15 @@
             align-items: flex-start;
             gap: 14px;
             margin-top: 18px;
+        }
+
+        .form-row {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .modal-content form {
+            padding: 20px;
         }
     }
 

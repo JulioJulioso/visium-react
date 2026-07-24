@@ -1,5 +1,6 @@
 # Changelog
-
+## 2026-07-24
+- Se corrige interfaz del login y responsividad.
 ## 2026-07-23
 
 ### Añadido

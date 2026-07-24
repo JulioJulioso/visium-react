@@ -54,7 +54,7 @@ export default function MenuLateral() {
             onClick={closeMenu}
           >
             <i className={`bi ${icon}`}></i>
-            {label}
+            <span className="nav-label">{label}</span>
           </NavLink>
         ))}
       </nav>
@@ -62,7 +62,7 @@ export default function MenuLateral() {
       <div className="sidebar-bottom">
         <NavLink className={navigationClassName(true)} to="/login" onClick={closeMenu}>
           <i className="bi bi-box-arrow-right"></i>
-          Cerrar Sesión
+          <span className="nav-label">Cerrar Sesión</span>
         </NavLink>
       </div>
     </aside>

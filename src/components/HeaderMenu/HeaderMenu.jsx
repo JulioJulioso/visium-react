@@ -1,14 +1,6 @@
 import "./HeaderMenu.css";
-import { useLocation } from "react-router-dom";
 
 export default function HeaderMenu() {
-  const location = useLocation();
-  const ocultarHeader = location.pathname === "/gestionPacientes";
-
-  if (ocultarHeader) {
-    return null;
-  }
-
   return (
     <header className="topbar">
       {/* 1. Botón Volver */}

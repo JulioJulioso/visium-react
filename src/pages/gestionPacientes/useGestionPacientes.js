@@ -8,17 +8,28 @@ const initialPatients = [
   { nombre: "José Ramírez", edad: 67, sexo: "Masculino", id: "P-1004", consulta: "16/06/2026", condicion: "Cataratas (OD)", color: "orange", img: "https://i.pravatar.cc/150?img=4" }
 ];
 
-export function useGestionPacientes() {
-  // Inicialización perezosa (Lazy Initialization) para evitar el error del linter
-  const [patients, setPatients] = useState(() => {
-    try {
-      const data = localStorage.getItem("patients");
-      return data ? JSON.parse(data) : initialPatients;
-    } catch (error) {
-      console.error("Error leyendo localStorage", error);
+const PATIENTS_STORAGE_KEY = "visium.gestion-pacientes";
+
+function getInitialPatients() {
+  try {
+    const storedPatients = localStorage.getItem(PATIENTS_STORAGE_KEY);
+
+    if (!storedPatients) {
       return initialPatients;
     }
-  });
+
+    const parsedPatients = JSON.parse(storedPatients);
+    return Array.isArray(parsedPatients) && parsedPatients.length > 0
+      ? parsedPatients
+      : initialPatients;
+  } catch (error) {
+    console.error("Error leyendo localStorage", error);
+    return initialPatients;
+  }
+}
+
+export function useGestionPacientes() {
+  const [patients, setPatients] = useState(getInitialPatients);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,9 +46,7 @@ export function useGestionPacientes() {
 
   // Guardar en LocalStorage cada vez que cambien los pacientes
   useEffect(() => {
-    if (patients.length > 0) {
-      localStorage.setItem("patients", JSON.stringify(patients));
-    }
+    localStorage.setItem(PATIENTS_STORAGE_KEY, JSON.stringify(patients));
   }, [patients]);
 
   // Cerrar menú contextual al hacer clic fuera

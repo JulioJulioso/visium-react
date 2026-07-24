@@ -4,7 +4,7 @@ import './gestionPacientes.css';
 export default function GestionPacientes() {
   // Extraemos toda la lógica y estados de nuestro Custom Hook
   const {
-    patients, searchQuery, setSearchQuery, currentPage, setCurrentPage,
+    patients, currentPage, setCurrentPage,
     filterTab, setFilterTab, isModalOpen, setIsModalOpen, formData, setFormData,
     contextMenu, editingIndex, filteredPatients, currentPatients, totalPages,
     startRecord, endRecord, handleOpenModal, handleFormSubmit, handleDeletePatient, handleContextMenu
@@ -12,38 +12,6 @@ export default function GestionPacientes() {
 
   return (
     <main className="main gestion-pacientes">
-      {/* Barra superior */}
-      <header className="topbar">
-        <div className="topbar-left">
-          <button className="back-btn"><i className="fa-solid fa-arrow-left"></i></button>
-          <h3>Pacientes</h3>
-        </div>
-        <div className="topbar-center">
-          <div className="search-box">
-            <i className="fa-solid fa-magnifying-glass"></i>
-            <input
-              type="text"
-              placeholder="Buscar paciente o ID..."
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setCurrentPage(1);
-              }}
-            />
-          </div>
-        </div>
-        <div className="topbar-right">
-          <button className="btn-primary" onClick={() => handleOpenModal(-1)}>
-            <i className="fa-solid fa-user-plus"></i> Nuevo Paciente
-          </button>
-          <button className="icon-btn"><i className="fa-regular fa-bell"></i></button>
-          <div className="profile">
-            <img src="https://i.pravatar.cc/100?img=12" alt="Doctor" />
-            <span>Dr. Smith</span>
-          </div>
-        </div>
-      </header>
-
       {/* Dashboard */}
       <section className="dashboard">
         <div className="dashboard-header">
@@ -136,7 +104,7 @@ export default function GestionPacientes() {
               {currentPatients.map((p) => {
                 const globalIndex = patients.findIndex(pat => pat.id === p.id);
                 return (
-                  <tr key={p.id} className="fade">
+                  <tr key={p.id} className="patient-row">
                     <td className="patient">
                       <img src={p.img} alt={p.nombre} />
                       <div>

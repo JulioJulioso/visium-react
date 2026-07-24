@@ -1,9 +1,13 @@
 import "./HeaderMenu.css";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 
 export default function HeaderMenu() {
   const location = useLocation();
-  const ocultarHeader = location.pathname === "/gestion";
+  const ocultarHeader = location.pathname === "/gestionPacientes";
+
+  if (ocultarHeader) {
+    return null;
+  }
 
   return (
     <header className="topbar">
@@ -28,12 +32,10 @@ export default function HeaderMenu() {
 
       {/* 3. Acciones a la Derecha (Nuevo Paciente, Campana, Perfil) */}
       <div className="topbar-right">
-        {!ocultarHeader && (
-          <button className="btn-primary">
-            <i className="bi bi-person-fill-add"></i>
-            <span className="btn-text">Nuevo Paciente</span>
-          </button>
-        )}
+        <button className="btn-primary">
+          <i className="bi bi-person-fill-add"></i>
+          <span className="btn-text">Nuevo Paciente</span>
+        </button>
 
         <button className="icon-btn" aria-label="Notificaciones">
           <i className="bi bi-bell"></i>

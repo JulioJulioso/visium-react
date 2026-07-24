@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-23
+
+### Añadido
+- Se incorporó la vista de Citas y se actualizó la navegación hacia Gestión de Pacientes.
+
+### Modificado
+- Se corrigieron la ruta y los estilos aislados de Gestión de Pacientes.
+- Se modernizó el menú lateral, su estado activo y la adaptación del encabezado.
+- Se mejoró la responsividad de Dashboard, menú lateral y encabezado.
+
 ## 2026-07-22
 
 ### Añadido

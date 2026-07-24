@@ -1,4 +1,7 @@
-:root {
+/* Los estilos de esta página no deben afectar los layouts ni páginas vecinas. */
+@scope (.gestion-pacientes) {
+
+:scope {
     --primary: #2563eb;
     --primary-dark: #1d4ed8;
     --background: #f8fafc;
@@ -14,13 +17,14 @@
     --radius: 18px;
 }
 
-* {
+:scope,
+:scope * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+:scope {
     font-family: 'Inter', sans-serif;
     background: var(--background);
     color: var(--text);
@@ -780,20 +784,20 @@ form {
 /*=========================
       SCROLLBAR
 ==========================*/
-::-webkit-scrollbar {
+:scope::-webkit-scrollbar {
     width: 10px;
 }
 
-::-webkit-scrollbar-track {
+:scope::-webkit-scrollbar-track {
     background: #edf2f7;
 }
 
-::-webkit-scrollbar-thumb {
+:scope::-webkit-scrollbar-thumb {
     background: #94a3b8;
     border-radius: 20px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+:scope::-webkit-scrollbar-thumb:hover {
     background: #64748b;
 }
 
@@ -801,10 +805,10 @@ form {
       ANIMACIONES
 ==========================*/
 .fade {
-    animation: fade .35s ease;
+    animation: gestion-pacientes-fade .35s ease;
 }
 
-@keyframes fade {
+@keyframes gestion-pacientes-fade {
     from {
         opacity: 0;
         transform: translateY(12px);
@@ -813,4 +817,6 @@ form {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
 }

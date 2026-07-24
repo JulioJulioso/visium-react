@@ -91,32 +91,71 @@
   color: #003896;
 }
 
-/* Menú y Footer ocultos por defecto en celular */
+/* Despliegue del menú en celular y tablet */
 .sidebar .menu,
 .sidebar .sidebar-bottom {
-  display: none;
+  display: flex;
   grid-column: 1 / -1;
   width: 100%;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.35s ease,
+    padding 0.35s ease,
+    margin 0.35s ease,
+    border-color 0.35s ease,
+    visibility 0s linear 0.35s;
 }
 
 .sidebar .menu {
   flex-direction: column;
   gap: 4px;
-  padding-top: 12px;
-  padding-bottom: 4px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .sidebar .sidebar-bottom {
   flex-direction: column;
-  margin-top: 8px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 1px solid transparent;
 }
 
-/* 🏷️ CLASE ACTIVA (Cuando abres el menú en React/JS) */
+/* Estado desplegado */
 .sidebar.is-open .menu,
 .sidebar.is-open .sidebar-bottom {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.sidebar.is-open .menu {
+  max-height: 360px;
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+
+.sidebar.is-open .sidebar-bottom {
+  max-height: 80px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top-color: rgba(255, 255, 255, 0.45);
+}
+
+.sidebar .sidebar-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.sidebar.is-open .sidebar-toggle i {
+  transform: rotate(180deg);
 }
 
 /* Enlaces de Navegación */
@@ -259,6 +298,13 @@
   .sidebar .sidebar-bottom {
     display: flex !important;
     grid-column: auto;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
   }
 
   .sidebar .menu {
@@ -278,5 +324,14 @@
   .sidebar .sidebar-bottom {
     margin-top: auto;
     padding-top: 15px;
+    border-top-color: rgba(255, 255, 255, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar .menu,
+  .sidebar .sidebar-bottom,
+  .sidebar .sidebar-toggle i {
+    transition: none;
   }
 }

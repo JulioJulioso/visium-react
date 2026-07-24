@@ -1,17 +1,23 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router-dom";
 import "./Menu.css";
+
+const navigationItems = [
+  { to: "/dashboard", icon: "bi-grid", label: "Panel de control" },
+  { to: "/gestionPacientes", icon: "bi-people-fill", label: "Pacientes" },
+  { to: "/citas", icon: "bi-calendar-event", label: "Citas" },
+  // Métricas reutiliza temporalmente el dashboard, por lo que no debe duplicar su estado activo.
+  { to: "/dashboard", icon: "bi-graph-up", label: "Métricas", matchActive: false },
+  { to: "/paciente", icon: "bi-file-earmark-text", label: "Ficha" },
+];
 
 export default function MenuLateral() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const toggleMenu = () => setIsOpen((open) => !open);
+  const closeMenu = () => setIsOpen(false);
+  const navigationClassName = (matchActive) => ({ isActive }) =>
+    `nav-link${isActive && matchActive ? " active" : ""}`;
 
   return (
     <aside className={`sidebar ${isOpen ? "is-open" : ""}`}>
@@ -38,39 +44,24 @@ export default function MenuLateral() {
       </div>
 
       <nav className="menu">
-        <Link className="nav-link active" aria-current="page" to="/" onClick={closeMenu}>
-          {/* 🔴 Corregido: className */}
-          <i className="bi bi-grid fw-bold"></i>
-          Panel de control
-        </Link>
-        <Link className="nav-link" to="/" onClick={closeMenu}>
-          {/* 🔴 Corregido: className */}
-          <i className="bi bi-people-fill"></i>
-          Pacientes
-        </Link>
-        <Link className="nav-link" to="/" onClick={closeMenu}>
-          {/* 🔴 Corregido: className */}
-          <i className="bi bi-calendar-event"></i>
-          Citas
-        </Link>
-        <Link className="nav-link" to="/" onClick={closeMenu}>
-          {/* 🔴 Corregido: className */}
-          <i className="bi bi-graph-up"></i>
-          Métricas
-        </Link>
-        <Link className="nav-link" to="/" onClick={closeMenu}>
-          {/* 🔴 Corregido: className */}
-          <i className="bi bi-file-earmark-text"></i>
-          Ficha
-        </Link>
+        {navigationItems.map(({ to, icon, label, matchActive = true }) => (
+          <NavLink
+            key={label}
+            to={to}
+            className={navigationClassName(matchActive)}
+            onClick={closeMenu}
+          >
+            <i className={`bi ${icon}`}></i>
+            {label}
+          </NavLink>
+        ))}
       </nav>
 
       <div className="sidebar-bottom">
-        <Link className="nav-link" to="/" onClick={closeMenu}>
-          {/* 🔴 Corregido: className */}
+        <NavLink className={navigationClassName(true)} to="/login" onClick={closeMenu}>
           <i className="bi bi-box-arrow-right"></i>
           Cerrar Sesión
-        </Link>
+        </NavLink>
       </div>
     </aside>
   );

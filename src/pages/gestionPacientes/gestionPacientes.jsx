@@ -11,7 +11,7 @@ export default function GestionPacientes() {
   } = useGestionPacientes();
 
   return (
-    <main className="main">
+    <main className="main gestion-pacientes">
       {/* Barra superior */}
       <header className="topbar">
         <div className="topbar-left">

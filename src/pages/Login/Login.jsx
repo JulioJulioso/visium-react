@@ -61,7 +61,7 @@ function Login() {
 
                             <div className="brand-title">
 
-                                Visium Pro
+                                Visium
 
                             </div>
 
@@ -237,17 +237,17 @@ function Login() {
                             <div className="mb-3 position-relative">
 
 
-                            <label className="form-label-custom mb-2 d-block">
+                                <label className="form-label-custom mb-2 d-block">
 
-                                Contraseña
+                                    Contraseña
 
-                                <a className="forgot-password" href="#">
+                                    <a className="forgot-password" href="#">
 
-                                    ¿Olvidó su contraseña?
+                                        ¿Olvidó su contraseña?
 
-                                </a>
+                                    </a>
 
-                            </label>
+                                </label>
 
 
 

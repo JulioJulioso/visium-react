@@ -31,7 +31,13 @@ export default function MenuLateral() {
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isOpen}
         >
-          <i className={`bi ${isOpen ? "bi-x-lg" : "bi-list"}`}></i>
+          <i className="bi bi-list sidebar-toggle-menu-icon" aria-hidden="true"></i>
+          <img
+            className="sidebar-toggle-logo"
+            src={eyeLogo}
+            alt=""
+            aria-hidden="true"
+          />
         </button>
 
         <div className="logo-icon">

@@ -20,6 +20,10 @@
 - Se corrigió la carga y persistencia de pacientes en `localStorage` mediante una clave específica de la aplicación.
 - Se corrigió la visualización de datos y controles en Gestión de Pacientes.
 
+### Quitado
+
+-Se quita boton agregar cliente de gestionPacientes
+
 ## 2026-07-23
 
 ### Añadido

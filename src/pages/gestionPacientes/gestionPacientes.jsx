@@ -19,9 +19,6 @@ export default function GestionPacientes() {
             <h1>Gestión de Pacientes</h1>
             <p>Viendo la base de datos central de oftalmología.</p>
           </div>
-          <button className="add-patient" onClick={() => handleOpenModal(-1)}>
-            <i className="fa-solid fa-plus"></i> Agregar Paciente
-          </button>
         </div>
 
         <div className="cards">

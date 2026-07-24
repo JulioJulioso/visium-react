@@ -45,6 +45,12 @@
   font-size: 18px;
 }
 
+.sidebar .logo-icon img {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
 .sidebar .logo h2 {
   margin: 0;
   color: #0b5ed7;
@@ -162,6 +168,11 @@
     height: 42px;
     border-radius: 12px;
     font-size: 20px;
+  }
+
+  .sidebar .logo-icon img {
+    width: 32px;
+    height: 32px;
   }
 
   .sidebar .logo h2 {

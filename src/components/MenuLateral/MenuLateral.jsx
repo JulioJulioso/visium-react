@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import eyeLogo from "../../assets/logo-eye.svg";
 import "./Menu.css";
 
 const navigationItems = [
@@ -22,14 +23,6 @@ export default function MenuLateral() {
   return (
     <aside className={`sidebar ${isOpen ? "is-open" : ""}`}>
       <div className="logo">
-        <div className="logo-icon">
-          {/* 🔴 Corregido: className en vez de class */}
-          <i className="fa-solid fa-eye"></i>
-        </div>
-        <div>
-          <h2>Visium</h2>
-          <span>Software de Gestión Óptica</span>
-        </div>
 
         <button
           className="sidebar-toggle"
@@ -40,6 +33,16 @@ export default function MenuLateral() {
         >
           <i className={`bi ${isOpen ? "bi-x-lg" : "bi-list"}`}></i>
         </button>
+
+        <div className="logo-icon">
+          <img src={eyeLogo} alt="" aria-hidden="true" />
+        </div>
+        <div>
+          <h2>Visium</h2>
+          <span>Software de Gestión Óptica</span>
+        </div>
+
+
       </div>
 
       <nav className="menu">

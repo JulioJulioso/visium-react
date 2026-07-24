@@ -1,0 +1,23 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="64"
+  height="64"
+  viewBox="0 0 64 64"
+  fill="none"
+  role="img"
+  aria-labelledby="eye-logo-title eye-logo-description"
+>
+  <title id="eye-logo-title">Visium</title>
+  <desc id="eye-logo-description">Ícono de un ojo estilizado</desc>
+
+  <path
+    d="M5.5 32C12.8 20.8 21.6 15.2 32 15.2S51.2 20.8 58.5 32C51.2 43.2 42.4 48.8 32 48.8S12.8 43.2 5.5 32Z"
+    stroke="#FFFFFF"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="32" cy="32" r="11" fill="#FFFFFF" fill-opacity="0.95"/>
+  <circle cx="32" cy="32" r="4.5" fill="#0B5ED7"/>
+  <circle cx="28.5" cy="27.5" r="2.5" fill="white" fill-opacity="0.9"/>
+</svg>

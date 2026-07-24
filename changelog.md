@@ -1,6 +1,25 @@
 # Changelog
 ## 2026-07-24
-- Se corrige interfaz del login y responsividad.
+
+### Añadido
+- Se añadió un logo SVG con forma de ojo al menú lateral.
+- Se incorporaron símbolos a botones que se mostraban vacíos en Gestión de Pacientes.
+- Se agregó una animación de apertura y cierre al menú hamburguesa en móvil y tablet.
+- Se añadió una transición que transforma el botón hamburguesa en el logo al desplegar el menú.
+
+### Modificado
+- Se aplicó al menú lateral un estilo invertido con fondo azul oscuro, textos blancos y estados hover destacados.
+- Se reemplazó la barra y el desplazamiento del hover por un subrayado animado en los textos de navegación.
+- Se ocultó el ícono principal del logo en la versión responsiva y se reposicionó el botón de despliegue.
+- Se mejoró la responsividad de Gestión de Pacientes, incluyendo tarjetas, tablas, acciones y paginación.
+- Se actualizó el encabezado de Gestión de Pacientes.
+- Se cambió el nombre mostrado en el acceso de «Visium Pro» a «Visium».
+- Se corrigió la interfaz del login y su responsividad.
+
+### Corregido
+- Se corrigió la carga y persistencia de pacientes en `localStorage` mediante una clave específica de la aplicación.
+- Se corrigió la visualización de datos y controles en Gestión de Pacientes.
+
 ## 2026-07-23
 
 ### Añadido
